@@ -95,13 +95,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Local Playground">
-<meta property="og:url" content="https://joyride2017.github.io/note/index.html">
+<meta name="description" content="只字片语mind-boggling: difficult to imagine and very big, strange, or complicated. &amp;lt;&amp;gt; a problem of min-boggling complexity thrust sth upon/on sb: if something is thrust upon you, you are forced to a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="english_sentence">
+<meta property="og:url" content="https://joyride2017.github.io/note/2017/09/08/english-sentence/index.html">
 <meta property="og:site_name" content="Local Playground">
+<meta property="og:description" content="只字片语mind-boggling: difficult to imagine and very big, strange, or complicated. &amp;lt;&amp;gt; a problem of min-boggling complexity thrust sth upon/on sb: if something is thrust upon you, you are forced to a">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-09-09T19:02:09.328Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Local Playground">
+<meta name="twitter:title" content="english_sentence">
+<meta name="twitter:description" content="只字片语mind-boggling: difficult to imagine and very big, strange, or complicated. &amp;lt;&amp;gt; a problem of min-boggling complexity thrust sth upon/on sb: if something is thrust upon you, you are forced to a">
 
 
 
@@ -131,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="https://joyride2017.github.io/note/"/>
+  <link rel="canonical" href="https://joyride2017.github.io/note/2017/09/08/english-sentence/"/>
 
 
 
 
 
-  <title>Local Playground</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>english_sentence | Local Playground</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -156,8 +160,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
-  page-home">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -220,141 +223,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://joyride2017.github.io/note/note/2017/09/09/python-basics/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="n0body">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/note/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Local Playground">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/note/2017/09/09/python-basics/" itemprop="url">python_basics</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-09T11:56:03-05:00">
-                2017-09-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>$$lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|&lt;\epsilon)=1, i=1,…,n$$</p>
-<h3 id="Preliminary"><a href="#Preliminary" class="headerlink" title="Preliminary"></a>Preliminary</h3><h4 id="Find-current-directory-and-file’s-directory"><a href="#Find-current-directory-and-file’s-directory" class="headerlink" title="Find current directory and file’s directory"></a>Find current directory and file’s directory</h4><p>To get the full path to the directory a Python file is contained in, write this in that file:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">dir_path = os.path.dirname(os.path.realpath(__file__))</div><div class="line">print(<span class="string">"dir_apth: "</span> + dir_path)</div></pre></td></tr></table></figure></p>
-<p>Note that the incantation above won’t work if you’ve already used <code>os.chdir()</code> to change your current working directory, since the value of the <strong>file</strong> constant is relative to the current working directory and is not changed by an <code>os.chdir()</code> call.</p>
-<p>To get the current working directory use:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cwd = os.getcwd()</div><div class="line">print(<span class="string">"cwd: "</span> + cwd)</div></pre></td></tr></table></figure></p>
-<p>Documentation references for the modules, constants and functions used above:</p>
-<ul>
-<li>The <code>os</code> and <code>os.path</code> modules.</li>
-<li>The <code>__file__</code> constant</li>
-<li><code>os.path.realpath(path)</code> (returns “the canonical path of the specified filename, eliminating any symbolic links encountered in the path”)</li>
-<li><code>os.path.dirname(path)</code> (returns “the directory name of pathname path”)</li>
-<li><code>os.getcwd()</code> (returns “a string representing the current working directory”)</li>
-<li><code>os.chdir(path)</code> (“change the current working directory to path”)</li>
-</ul>
-<h3 id="Preparation-cleaning-munging-wranggling-reshaping-1"><a href="#Preparation-cleaning-munging-wranggling-reshaping-1" class="headerlink" title="Preparation (cleaning, munging, wranggling, reshaping)1"></a>Preparation (cleaning, munging, wranggling, reshaping)<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></h3><h3 id="Transformation-aggregating-grouping-NumPy"><a href="#Transformation-aggregating-grouping-NumPy" class="headerlink" title="Transformation (aggregating, grouping, NumPy)"></a>Transformation (aggregating, grouping, NumPy)</h3><h3 id="Modeling-and-computation-statistical-model-machien-learning-algorithm"><a href="#Modeling-and-computation-statistical-model-machien-learning-algorithm" class="headerlink" title="Modeling and computation (statistical model, machien learning algorithm)"></a>Modeling and computation (statistical model, machien learning algorithm)</h3><h3 id="Presentation-visualization"><a href="#Presentation-visualization" class="headerlink" title="Presentation (visualization)"></a>Presentation (visualization)</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;">Data munging or data wrangling is loosely the process of manually converting or mapping data from one “raw” form into another format that allows for more convenient consumption of the data with the help of semi-automated tools.</span><a href="#fnref:1" rev="footnote"> ↩</a></li></ol></div></div>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -384,9 +255,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/note/2017/09/08/english-sentence/" itemprop="url">english_sentence</a></h1>
+          <h1 class="post-title" itemprop="name headline">english_sentence</h1>
         
 
         <div class="post-meta">
@@ -436,9 +305,7 @@
       
 
       
-        
-          
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="只字片语"><a href="#只字片语" class="headerlink" title="只字片语"></a>只字片语</h1><p><strong>mind-boggling</strong>: difficult to imagine and very big, strange, or complicated. &lt;&gt; a problem of min-boggling complexity</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="只字片语"><a href="#只字片语" class="headerlink" title="只字片语"></a>只字片语</h1><p><strong>mind-boggling</strong>: difficult to imagine and very big, strange, or complicated. &lt;&gt; a problem of min-boggling complexity</p>
 <p><strong>thrust sth upon/on sb</strong>: if something is thrust upon you, you are forced to accept it even if you do not wnat it.</p>
 <ul>
 <li>She never enjoyed the fame that <code>was thrust upon</code> her.</li>
@@ -521,8 +388,6 @@
 </li>
 </ol>
 
-          
-        
       
     </div>
     
@@ -539,12 +404,28 @@
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/note/2017/09/09/python-basics/" rel="prev" title="python_basics">
+                python_basics <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -554,10 +435,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -565,6 +447,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -585,8 +471,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <p class="site-author-name" itemprop="name">n0body</p>
@@ -629,6 +524,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#只字片语"><span class="nav-number">1.</span> <span class="nav-text">只字片语</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#日常对话"><span class="nav-number">2.</span> <span class="nav-text">日常对话</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重要链结"><span class="nav-number">3.</span> <span class="nav-text">重要链结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -756,6 +667,10 @@
 
 
   
+  <script type="text/javascript" src="/note/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/note/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 

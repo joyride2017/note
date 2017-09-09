@@ -95,13 +95,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Local Playground">
-<meta property="og:url" content="https://joyride2017.github.io/note/index.html">
+<meta name="description" content="$$lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|&amp;lt;\epsilon)=1, i=1,…,n$$ PreliminaryFind current directory and file’s directoryTo get the full path to the directory a Python file is contained in, w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python_basics">
+<meta property="og:url" content="https://joyride2017.github.io/note/2017/09/09/python-basics/index.html">
 <meta property="og:site_name" content="Local Playground">
+<meta property="og:description" content="$$lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|&amp;lt;\epsilon)=1, i=1,…,n$$ PreliminaryFind current directory and file’s directoryTo get the full path to the directory a Python file is contained in, w">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-09-09T19:09:15.870Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Local Playground">
+<meta name="twitter:title" content="python_basics">
+<meta name="twitter:description" content="$$lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|&amp;lt;\epsilon)=1, i=1,…,n$$ PreliminaryFind current directory and file’s directoryTo get the full path to the directory a Python file is contained in, w">
 
 
 
@@ -131,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="https://joyride2017.github.io/note/"/>
+  <link rel="canonical" href="https://joyride2017.github.io/note/2017/09/09/python-basics/"/>
 
 
 
 
 
-  <title>Local Playground</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>python_basics | Local Playground</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -156,8 +160,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
-  page-home">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -220,9 +223,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -252,9 +255,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/note/2017/09/09/python-basics/" itemprop="url">python_basics</a></h1>
+          <h1 class="post-title" itemprop="name headline">python_basics</h1>
         
 
         <div class="post-meta">
@@ -304,9 +305,7 @@
       
 
       
-        
-          
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>$$lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|&lt;\epsilon)=1, i=1,…,n$$</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>$$lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|&lt;\epsilon)=1, i=1,…,n$$</p>
 <h3 id="Preliminary"><a href="#Preliminary" class="headerlink" title="Preliminary"></a>Preliminary</h3><h4 id="Find-current-directory-and-file’s-directory"><a href="#Find-current-directory-and-file’s-directory" class="headerlink" title="Find current directory and file’s directory"></a>Find current directory and file’s directory</h4><p>To get the full path to the directory a Python file is contained in, write this in that file:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">dir_path = os.path.dirname(os.path.realpath(__file__))</div><div class="line">print(<span class="string">"dir_apth: "</span> + dir_path)</div></pre></td></tr></table></figure></p>
 <p>Note that the incantation above won’t work if you’ve already used <code>os.chdir()</code> to change your current working directory, since the value of the <strong>file</strong> constant is relative to the current working directory and is not changed by an <code>os.chdir()</code> call.</p>
 <p>To get the current working directory use:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cwd = os.getcwd()</div><div class="line">print(<span class="string">"cwd: "</span> + cwd)</div></pre></td></tr></table></figure></p>
@@ -320,8 +319,6 @@
 <li><code>os.chdir(path)</code> (“change the current working directory to path”)</li>
 </ul>
 <h3 id="Preparation-cleaning-munging-wranggling-reshaping-1"><a href="#Preparation-cleaning-munging-wranggling-reshaping-1" class="headerlink" title="Preparation (cleaning, munging, wranggling, reshaping)1"></a>Preparation (cleaning, munging, wranggling, reshaping)<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></h3><h3 id="Transformation-aggregating-grouping-NumPy"><a href="#Transformation-aggregating-grouping-NumPy" class="headerlink" title="Transformation (aggregating, grouping, NumPy)"></a>Transformation (aggregating, grouping, NumPy)</h3><h3 id="Modeling-and-computation-statistical-model-machien-learning-algorithm"><a href="#Modeling-and-computation-statistical-model-machien-learning-algorithm" class="headerlink" title="Modeling and computation (statistical model, machien learning algorithm)"></a>Modeling and computation (statistical model, machien learning algorithm)</h3><h3 id="Presentation-visualization"><a href="#Presentation-visualization" class="headerlink" title="Presentation (visualization)"></a>Presentation (visualization)</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;">Data munging or data wrangling is loosely the process of manually converting or mapping data from one “raw” form into another format that allows for more convenient consumption of the data with the help of semi-automated tools.</span><a href="#fnref:1" rev="footnote"> ↩</a></li></ol></div></div>
-          
-        
       
     </div>
     
@@ -338,213 +335,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://joyride2017.github.io/note/note/2017/09/08/english-sentence/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="n0body">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/note/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Local Playground">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/note/2017/09/08/english-sentence/" itemprop="url">english_sentence</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-08T07:50:35-05:00">
-                2017-09-08
-              </time>
+              <a href="/note/2017/09/08/english-sentence/" rel="next" title="english_sentence">
+                <i class="fa fa-chevron-left"></i> english_sentence
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="只字片语"><a href="#只字片语" class="headerlink" title="只字片语"></a>只字片语</h1><p><strong>mind-boggling</strong>: difficult to imagine and very big, strange, or complicated. &lt;&gt; a problem of min-boggling complexity</p>
-<p><strong>thrust sth upon/on sb</strong>: if something is thrust upon you, you are forced to accept it even if you do not wnat it.</p>
-<ul>
-<li>She never enjoyed the fame that <code>was thrust upon</code> her.</li>
-<li>He <code>had marriage thrust upon</code> him. 强加于… {逼婚逼迫枷锁光环强人所难}</li>
-</ul>
-<p>Coffee is highly acidic. High doses of acidic caffeine mess with your hormones, namely your stress hormones, which control your skin’s oil production.</p>
-<p>The <code>nonchalance</code> isn’t <code>posturing</code>. 这种满不在乎不只是做做样子。</p>
-<p>… , <code>flaunting ostentatious wealth</code> at least partially supported by taxpayer money goes beyond <code>tackiness</code> and approaches <code>sadism</code>. {摆阔炫富} 已非低俗可以形容，而是近乎变态</p>
-<p>Every callout is an opportunity to either improve yourself or model grace under fire. We are all just students in this university called life. 出临事不惊的大度</p>
-<p>Before you tell a stranger that her complaint about the nation falling into the hands of cartoon rich people who can’t even forcefully denounce the Confederacy is really just <code>the jealous squalling of a loser</code> with a bad life, stop and think: Is this public? 输家的嫉妒心理</p>
-<p>He gave us a <code>knowing</code> look. 他朝我们会意地看了一眼。</p>
-<p>She exchanged a <code>knowing smile</code> with her mother. 她与母亲相互会心地一笑</p>
-<p>Fancy you knowing him!<br>真没想到你认识他!</p>
-<p>I <code>held back</code> not knowing his real intention.<br>我有点犹豫不定，不知道他的真正意图是什么。</p>
-<p>Knowing that danger threatened, they were <code>on the alert</code>.<br>因为知道可能会发生危险，他们处于戒备状态。</p>
-<p> I’m not sure if <code>the argument holds up</code>, but it’s stimulating.<br> 我不能确定这一论点能否<code>经得住推敲</code>，但是它却很令人耳目一新。</p>
-<p>Children’s wear is one area that is <code>holding up well in the recession.</code><br> 在经济衰退期间，童装是持续销售良好的一个领域。{耐压逆势成长}</p>
-<h1 id="日常对话"><a href="#日常对话" class="headerlink" title="日常对话"></a>日常对话</h1><p>Its’ a good way to start morning.</p>
-<p>I assume they find everything is fine.</p>
-<p>I write about technical topics (mostly related to Python programming), with occasional diversions into other things that interest me.</p>
-<h1 id="重要链结"><a href="#重要链结" class="headerlink" title="重要链结"></a>重要链结</h1><ol>
-<li><p><a href="https://docs.continuum.io/anaconda/install/windows" target="_blank" rel="external">9-8-2017 Anaconda installation guide—Don’t check some options</a></p>
-<p>Atom Hydrogen: No Kernel specs found. Resolution:  add to PATH, C:\Users\libin\Anaconda2 and C:\Users\libin\Anaconda2\Scripts.</p>
-<p><a href="https://stackoverflow.com/questions/35254852/how-to-change-jupyter-start-folder" target="_blank" rel="external">9-8-2017 How to change your Jupyter starting folder</a></p>
-<p><a href="https://stackoverflow.com/questions/37442494/is-it-ok-having-both-anacondas-2-7-and-3-5-installed-in-the-same-time" target="_blank" rel="external">Running two versions of Python distribution through Anaconda</a>; </p>
-<p><a href="http://www.wilsonsayreslab.org/blog/2015/10/26/managing-multiple-python-environments-using-anaconda" target="_blank" rel="external">another guide</a></p>
-<p><a href="https://stackoverflow.com/questions/37442494/is-it-ok-having-both-anacondas-2-7-and-3-5-installed-in-the-same-time" target="_blank" rel="external">Running Jupyter Notebook for multiple versions of Python</a></p>
-<p><a href="https://stackoverflow.com/questions/30492623/using-both-python-2-x-and-python-3-x-in-ipython-notebook" target="_blank" rel="external">Running Jupyter Notebook for multiple version of Python (better guide)</a></p>
-<p><a href="https://conda.io/docs/commands/env/conda-env-remove.html" target="_blank" rel="external">Remove existing environment after deactivating it</a></p>
-<p><a href="https://conda.io/docs/user-guide/tasks/manage-python.html" target="_blank" rel="external">Verify that the new environment is your current environment</a></p>
-<p><a href="http://atom-packages.directory/package/language-markdown/" target="_blank" rel="external">After installing Hydrogen, install Markdown language supprot</a></p>
-<p><a href="https://discuss.atom.io/t/spell-check-not-working/29126/24" target="_blank" rel="external">After installing language-markdown package to re-enable spell-check</a></p>
-</li>
-</ol>
-<ol>
-<li>Toggle = add or remove</li>
-<li><p><a href="https://github.com/wesm/pydata-book/tree/2nd-edition" target="_blank" rel="external">Python for data analysis—2nd edition’s Ipython</a></p>
-<ul>
-<li><p><a href="http://statsmodels.org/" target="_blank" rel="external">statsmodels</a></p>
-</li>
-<li><p><a href="http://scikit-learn.org/" target="_blank" rel="external">scikit-learn</a></p>
-</li>
-<li><p><a href="http://scipy.org/" target="_blank" rel="external">scipy</a></p>
-<p>​</p>
-</li>
-</ul>
-</li>
-<li><p>In <strong>Jupyter</strong>, running the command below sets up the integration so you can create multiple plot windows without interfering with the console session: %matplotlib inline</p>
-</li>
-</ol>
-<ol>
-<li><p>Use <strong>Python3</strong> sprint function in Python2:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function</div><div class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> division</div></pre></td></tr></table></figure>
-</li>
-<li><p><a href="Checkpoints and Autosaves under Jupyter">Example of configuring Jupyter</a></p>
-</li>
-<li><p><a href="http://blog.rtwilson.com/how-to-rescue-lost-code-from-a-jupyteripython-notebook/" target="_blank" rel="external">How to: rescue lost code from a Jupyter/IPython notebook</a></p>
-</li>
-<li><p><a href="https://github.com/ipython/ipython/wiki/IPEP-15:-Autosaving-the-IPython-Notebook" target="_blank" rel="external">What is checkpoint in Jupyter Notebook</a></p>
-</li>
-<li><p>Almost every object in Python has attached functions, known as <em>methods</em>, that have access to the object’s internal contents.</p>
-</li>
-<li><p>When assigning a variable (or name) in Python, you are creating a <strong>reference</strong> to<br>the object on the right hand side of the equals sign.</p>
-</li>
-<li><p>Python is said to always <strong>pass-by-reference</strong>, whereas some other languages (like C++) support various argument passing conventions, including as <strong>pass-by-value</strong> (creating <em>copies</em>) and pass-by-<br>reference. This means that a function in Python can alter the internals of its arguments.</p>
-</li>
-<li><p>How to use auto-completion to list all attributes of an object <code>a</code>? Answer: </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ a = <span class="string">'foo'</span></div><div class="line">$ a.&lt;Press Tab&gt;</div><div class="line">$ getattr(a,<span class="string">'split'</span>)</div><div class="line">​</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">13. To access module-defined functions, if we evoke it by `from &lt;module&gt; import &lt;funcs&gt;`  then we **don&apos;t** need to call these functions with prefixed `&lt;module&gt;`. </div><div class="line"></div><div class="line">14. To check if a variable `a` is `None`, we use  the command`a is None`.</div><div class="line"></div><div class="line">15. `a//b` means &quot;floor-divide `a` by `b`, _dropping_ any fractional remainder&quot;</div><div class="line"></div><div class="line">16. Integer division not resulting in a whole number will always yield a floating point number. `3/2=1.5`.</div><div class="line"></div><div class="line">17. `a**b` means &quot;raise `a` to the `b` power&quot;</div><div class="line"></div><div class="line">18. _String_ and _tuples_ are immutable, while _lists_, _dicts_, NumPy _arrays_, user-defined types (classes) are mutable, meaning that the object or values that they contain can be modified.</div><div class="line"></div><div class="line">19. Python string is immutable; you cannot modify a string without calling a method and create a new string. `new_string = old_string.replace(&apos;bad&apos;,&apos;good&apos;)` makes `good` is in place of `bad` in the `old_string` and `new_string` takes the result.</div><div class="line"></div><div class="line">20. Strings are a sequence of Unicode characters and can be treated like other sentences such as lists and tuples after conversion.</div><div class="line"></div><div class="line">    ``` python</div><div class="line">    $ s = `python`</div><div class="line">    $ list(s)</div><div class="line">    $ s[:3]</div></pre></td></tr></table></figure>
-</li>
-<li><p>String objects have a <strong>format</strong> method which can be used to substitute formatted arguments into the string, producing a new string.</p>
-</li>
-<li><p>you can <em>preface the leading quote</em> of the string with <code>r</code>which means that the characters should be interpreted as is.</p>
-</li>
-<li><p>You can see exactly what boolean value an object coerces to by invoking bool on it.  <code>bool(0)</code> return False.</p>
-</li>
-<li><p>The Python <code>datetime</code> module: <code>from datetime import datetime, date, time</code>.</p>
-</li>
-<li><p>​</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -554,10 +366,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -565,6 +378,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -585,8 +402,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <p class="site-author-name" itemprop="name">n0body</p>
@@ -629,6 +455,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Preliminary"><span class="nav-number">1.</span> <span class="nav-text">Preliminary</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-current-directory-and-file’s-directory"><span class="nav-number">1.1.</span> <span class="nav-text">Find current directory and file’s directory</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Preparation-cleaning-munging-wranggling-reshaping-1"><span class="nav-number">2.</span> <span class="nav-text">Preparation (cleaning, munging, wranggling, reshaping)1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transformation-aggregating-grouping-NumPy"><span class="nav-number">3.</span> <span class="nav-text">Transformation (aggregating, grouping, NumPy)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Modeling-and-computation-statistical-model-machien-learning-algorithm"><span class="nav-number">4.</span> <span class="nav-text">Modeling and computation (statistical model, machien learning algorithm)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Presentation-visualization"><span class="nav-number">5.</span> <span class="nav-text">Presentation (visualization)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -756,6 +598,10 @@
 
 
   
+  <script type="text/javascript" src="/note/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/note/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
