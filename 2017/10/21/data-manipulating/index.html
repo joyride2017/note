@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/note/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/note/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/note/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/note/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Reference: Chris Albon Data manipulating12345678from __future__ import divisionfrom numpy.random import randnimport numpy as npfrom pandas import Series, DataFrameimport pandasimport pandas as pd 1234">
+<meta property="og:type" content="article">
+<meta property="og:title" content="data manipulating">
+<meta property="og:url" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/index.html">
+<meta property="og:site_name" content="Local Playground">
+<meta property="og:description" content="Reference: Chris Albon Data manipulating12345678from __future__ import divisionfrom numpy.random import randnimport numpy as npfrom pandas import Series, DataFrameimport pandasimport pandas as pd 1234">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e01.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e02.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e03.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e04.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e05.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e18.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e19.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e19.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e21.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e06.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e07.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e08.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e09.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e10.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e11.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e12.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e13.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e14.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e15.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e16.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e17.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e22.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e23.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e24.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e25.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e26.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e27.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e28.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e29.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e30.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e31.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e32.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e33.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e34.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e35.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e36.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e37.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e42.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e39.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e43.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e44.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e45.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e46.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e47.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e48.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e49.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e50.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e51.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e53.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e54.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e56.png">
+<meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e57.png">
+<meta property="og:updated_time" content="2017-10-22T15:48:28.055Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="data manipulating">
+<meta name="twitter:description" content="Reference: Chris Albon Data manipulating12345678from __future__ import divisionfrom numpy.random import randnimport numpy as npfrom pandas import Series, DataFrameimport pandasimport pandas as pd 1234">
+<meta name="twitter:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e01.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/note/',
+    scheme: 'Gemini',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://joyride2017.github.io/note/2017/10/21/data-manipulating/"/>
+
+
+
+
+
+  <title>data manipulating | Local Playground</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/note/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Local Playground</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/note/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://joyride2017.github.io/note/note/2017/10/21/data-manipulating/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="n0body">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/note/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Local Playground">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">data manipulating</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-21T23:40:11-05:00">
+                2017-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Reference: <a href="https://chrisalbon.com/python/pandas_join_merge_dataframe.html" target="_blank" rel="external">Chris Albon</a></p>
+<h4 id="Data-manipulating"><a href="#Data-manipulating" class="headerlink" title="Data manipulating"></a>Data manipulating</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> division</div><div class="line"></div><div class="line"><span class="keyword">from</span> numpy.random <span class="keyword">import</span> randn</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series, DataFrame</div><div class="line"><span class="keyword">import</span> pandas</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">raw_data = &#123;</div><div class="line">        <span class="string">'subject_id'</span>: [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>],</div><div class="line">        <span class="string">'first_name'</span>: [<span class="string">'Alex'</span>, <span class="string">'Amy'</span>, <span class="string">'Allen'</span>, <span class="string">'Alice'</span>, <span class="string">'Ayoung'</span>],</div><div class="line">        <span class="string">'last_name'</span>: [<span class="string">'Anderson'</span>, <span class="string">'Ackerman'</span>, <span class="string">'Ali'</span>, <span class="string">'Aoni'</span>, <span class="string">'Atiches'</span>]&#125;</div><div class="line">df_a = pd.DataFrame(raw_data, columns = [<span class="string">'subject_id'</span>, <span class="string">'first_name'</span>, <span class="string">'last_name'</span>])</div><div class="line">df_a</div></pre></td></tr></table></figure>
+<p><img src="s1e01.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">raw_data = &#123;</div><div class="line">        <span class="string">'subject_id'</span>: [<span class="string">'4'</span>, <span class="string">'5'</span>, <span class="string">'6'</span>, <span class="string">'7'</span>, <span class="string">'8'</span>],</div><div class="line">        <span class="string">'first_name'</span>: [<span class="string">'Billy'</span>, <span class="string">'Brian'</span>, <span class="string">'Bran'</span>, <span class="string">'Bryce'</span>, <span class="string">'Betty'</span>],</div><div class="line">        <span class="string">'last_name'</span>: [<span class="string">'Bonder'</span>, <span class="string">'Black'</span>, <span class="string">'Balwner'</span>, <span class="string">'Brice'</span>, <span class="string">'Btisan'</span>]&#125;</div><div class="line">df_b = pd.DataFrame(raw_data, columns = [<span class="string">'subject_id'</span>, <span class="string">'first_name'</span>, <span class="string">'last_name'</span>])</div><div class="line">df_b</div></pre></td></tr></table></figure>
+<p><img src="s1e02.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">raw_data = &#123;</div><div class="line">        <span class="string">'subject_id'</span>: [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>, <span class="string">'7'</span>, <span class="string">'8'</span>, <span class="string">'9'</span>, <span class="string">'10'</span>, <span class="string">'11'</span>],</div><div class="line">        <span class="string">'test_id'</span>: [<span class="number">51</span>, <span class="number">15</span>, <span class="number">15</span>, <span class="number">61</span>, <span class="number">16</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">1</span>, <span class="number">61</span>, <span class="number">16</span>]&#125;</div><div class="line">df_grade = pd.DataFrame(raw_data, columns = [<span class="string">'subject_id'</span>,<span class="string">'test_id'</span>])</div><div class="line">df_grade</div></pre></td></tr></table></figure>
+<p><img src="s1e03.png" alt=""></p>
+<h5 id="Join-the-two-dataframes-along-rows"><a href="#Join-the-two-dataframes-along-rows" class="headerlink" title="Join the two dataframes along rows"></a>Join the two dataframes along rows</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">df_roster = pd.concat([df_a, df_b])</div><div class="line">df_roster</div></pre></td></tr></table></figure>
+<p><img src="s1e04.png" alt=""></p>
+<h5 id="Join-the-two-dataframes-along-columns"><a href="#Join-the-two-dataframes-along-columns" class="headerlink" title="Join the two dataframes along columns"></a>Join the two dataframes along columns</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pd.concat([df_a, df_b], axis=<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e05.png" alt=""></p>
+<h5 id="Join-a-collection-of-series-into-data-frame"><a href="#Join-a-collection-of-series-into-data-frame" class="headerlink" title="Join a collection of series into data frame"></a>Join a collection of series into data frame</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">s1 = Series([<span class="number">0</span>, <span class="number">1</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>])</div><div class="line">s2 = Series([<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], index=[<span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>])</div><div class="line">s3 = Series([<span class="number">5</span>, <span class="number">6</span>], index=[<span class="string">'f'</span>, <span class="string">'g'</span>])</div><div class="line"></div><div class="line">pd.concat([s1, s2, s3])</div></pre></td></tr></table></figure>
+<p><img src="s1e18.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pd.concat([s1, s2, s3], axis=<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e19.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">s4 = pd.concat([s1 * <span class="number">5</span>, s3])</div><div class="line">pd.concat([s1, s4], axis=<span class="number">1</span>, join=<span class="string">'outer'</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e19.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pd.concat([s1, s4], axis=<span class="number">1</span>, join_axes=[[<span class="string">'a'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'e'</span>]])</div></pre></td></tr></table></figure>
+<p><img src="s1e21.png" alt=""></p>
+<h5 id="Merge-two-dataframes-along-the-subject-id-value"><a href="#Merge-two-dataframes-along-the-subject-id-value" class="headerlink" title="Merge two dataframes along the subject_id value"></a>Merge two dataframes along the subject_id value</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pd.merge(df_roster, df_grade, on=<span class="string">'subject_id'</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e06.png" alt=""></p>
+<h5 id="Merge-with-key-named-differently-across-data-frames"><a href="#Merge-with-key-named-differently-across-data-frames" class="headerlink" title="Merge with key named differently across data frames"></a>Merge with key named differently across data frames</h5><p>Suppose column subject_id in data frame df_roster is renamed as sub_id. How do we get the same merge as above?<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># revised df_roster</span></div><div class="line">df_roster.rename(columns=&#123;<span class="string">'subject_id'</span>:<span class="string">'sub_id'</span>&#125;, inplace=<span class="keyword">True</span>)</div><div class="line">df_roster</div></pre></td></tr></table></figure></p>
+<p><img src="s1e07.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># merge: sub_id is equivalent to subject_id</span></div><div class="line">pd.merge(df_roster, df_grade, left_on=<span class="string">'sub_id'</span>, right_on=<span class="string">'subject_id'</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e08.png" alt=""></p>
+<h5 id="Merge-with-outer-join"><a href="#Merge-with-outer-join" class="headerlink" title="Merge with outer join"></a>Merge with outer join</h5><blockquote>
+<p>Full outer join produces the set of all records in Table A and Table B, with matching records from both sides where available. If there is no match, the missing side will contain null.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pd.merge(df_a, df_b, on=<span class="string">'subject_id'</span>, how=<span class="string">'outer'</span>)</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p><img src="s1e09.png" alt=""></p>
+<h5 id="Merge-with-inner-join"><a href="#Merge-with-inner-join" class="headerlink" title="Merge with inner join"></a>Merge with inner join</h5><p>Inner join produces only the set of records that match in both Table A and Table B.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pd.merge(df_a, df_b, on=<span class="string">'subject_id'</span>, how=<span class="string">'inner'</span>)</div></pre></td></tr></table></figure></p>
+<h5 id="Merge-with-right-join"><a href="#Merge-with-right-join" class="headerlink" title="Merge with right join"></a>Merge with right join</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pd.merge(df_a, df_b, on=<span class="string">'subject_id'</span>, how=<span class="string">'right'</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e10.png" alt=""></p>
+<h5 id="Merge-while-adding-a-suffix-to-duplicate-column-names"><a href="#Merge-while-adding-a-suffix-to-duplicate-column-names" class="headerlink" title="Merge while adding a suffix to duplicate column names"></a>Merge while adding a suffix to duplicate column names</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pd.merge(df_a, df_b, on=<span class="string">'subject_id'</span>, how=<span class="string">'left'</span>, suffixes=(<span class="string">'_A'</span>, <span class="string">'_B'</span>))</div></pre></td></tr></table></figure>
+<p><img src="s1e11.png" alt=""></p>
+<h5 id="Merge-based-on-indexes"><a href="#Merge-based-on-indexes" class="headerlink" title="Merge based on indexes"></a>Merge based on indexes</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">df_wide = pd.merge(df_a, df_b, right_index=<span class="keyword">True</span>, left_index=<span class="keyword">True</span>)</div><div class="line">df_wide</div></pre></td></tr></table></figure>
+<p><img src="s1e12.png" alt=""></p>
+<h5 id="Merge-with-multiple-keys"><a href="#Merge-with-multiple-keys" class="headerlink" title="Merge with multiple keys"></a>Merge with multiple keys</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pd.merge(df_a, df_b, on=[<span class="string">'first_name'</span>,<span class="string">'last_name'</span>], how=<span class="string">'outer'</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e13.png" alt=""></p>
+<h5 id="Merge-with-mixed-types-of-keys"><a href="#Merge-with-mixed-types-of-keys" class="headerlink" title="Merge with mixed types of keys"></a>Merge with mixed types of keys</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">df_group = DataFrame(&#123;<span class="string">'groups'</span>:[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],</div><div class="line">                      <span class="string">'points'</span>:[<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>]&#125;)</div><div class="line"></div><div class="line">pd.merge(df_wide,df_group,left_index=<span class="keyword">True</span>,right_on=<span class="string">'groups'</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e14.png" alt=""></p>
+<h5 id="Merge-with-hierarchically-indexed-data"><a href="#Merge-with-hierarchically-indexed-data" class="headerlink" title="Merge with hierarchically-indexed data"></a>Merge with hierarchically-indexed data</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">lefth = DataFrame(&#123;<span class="string">'States'</span>: [<span class="string">'Ohio'</span>, <span class="string">'Ohio'</span>, <span class="string">'Ohio'</span>, <span class="string">'Nevada'</span>, <span class="string">'Nevada'</span>],</div><div class="line">                   <span class="string">'Years'</span>: [<span class="number">2000</span>, <span class="number">2001</span>, <span class="number">2002</span>, <span class="number">2001</span>, <span class="number">2002</span>],</div><div class="line">                   <span class="string">'data'</span>: np.arange(<span class="number">5.</span>)&#125;)</div><div class="line">righth = DataFrame(np.arange(<span class="number">12</span>).reshape((<span class="number">6</span>, <span class="number">2</span>)),</div><div class="line">                   index=[[<span class="string">'Nevada'</span>, <span class="string">'Nevada'</span>, <span class="string">'Ohio'</span>, <span class="string">'Ohio'</span>, <span class="string">'Ohio'</span>, <span class="string">'Ohio'</span>],</div><div class="line">                          [<span class="number">2001</span>, <span class="number">2000</span>, <span class="number">2000</span>, <span class="number">2000</span>, <span class="number">2001</span>, <span class="number">2002</span>]],</div><div class="line">                   columns=[<span class="string">'event1'</span>, <span class="string">'event2'</span>])</div><div class="line">lefth</div><div class="line">righth</div></pre></td></tr></table></figure>
+<p><img src="s1e15.png" alt=""><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pd.merge(lefth, righth, left_on=[<span class="string">'States'</span>, <span class="string">'Years'</span>], right_index=<span class="keyword">True</span>,how=<span class="string">'outer'</span>)</div></pre></td></tr></table></figure></p>
+<p><img src="s1e16.png" alt=""></p>
+<h5 id="Using-the-indexes-of-both-sides-of-the-merge"><a href="#Using-the-indexes-of-both-sides-of-the-merge" class="headerlink" title="Using the indexes of both sides of the merge"></a>Using the indexes of both sides of the merge</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">left2 = DataFrame([[<span class="number">1.</span>, <span class="number">2.</span>], [<span class="number">3.</span>, <span class="number">4.</span>], [<span class="number">5.</span>, <span class="number">6.</span>]], index=[<span class="string">'1998'</span>, <span class="string">'1999'</span>, <span class="string">'2002'</span>],</div><div class="line">                 columns=[<span class="string">'Ohio'</span>, <span class="string">'Nevada'</span>])</div><div class="line">right2 = DataFrame([[<span class="number">7.</span>, <span class="number">8.</span>], [<span class="number">9.</span>, <span class="number">10.</span>], [<span class="number">11.</span>, <span class="number">12.</span>], [<span class="number">13</span>, <span class="number">14</span>]],</div><div class="line">                 index=[<span class="string">'1999'</span>, <span class="string">'2000'</span>, <span class="string">'2001'</span>, <span class="string">'2002'</span>], columns=[<span class="string">'Missouri'</span>, <span class="string">'Alabama'</span>])</div><div class="line"></div><div class="line">pd.merge(left2, right2, left_index=<span class="keyword">True</span>, right_index=<span class="keyword">True</span>, how=<span class="string">'inner'</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e17.png" alt=""></p>
+<h5 id="Replace-missing-values"><a href="#Replace-missing-values" class="headerlink" title="Replace missing values"></a>Replace missing values</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">a = Series([np.nan, <span class="number">2.5</span>, np.nan, <span class="number">3.5</span>, <span class="number">4.5</span>, np.nan],</div><div class="line">           index=[<span class="string">'f'</span>, <span class="string">'e'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>])</div><div class="line">b = Series(np.arange(len(a), dtype=np.float64),</div><div class="line">           index=[<span class="string">'f'</span>, <span class="string">'e'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>])</div><div class="line">b[<span class="number">-1</span>] = np.nan</div><div class="line"></div><div class="line">a</div><div class="line"></div><div class="line">b</div></pre></td></tr></table></figure>
+<p><img src="s1e22.png" alt=""></p>
+<p>Replacing missing values of <strong>a</strong> with counterparts of <strong>b</strong>:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">c = np.where(pd.isnull(a), b, a)</div><div class="line">Series(c,index=[<span class="string">'f'</span>, <span class="string">'e'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>])</div></pre></td></tr></table></figure></p>
+<p><img src="s1e23.png" alt=""></p>
+<p>Updating partial series:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">d = b[:<span class="number">-2</span>].combine_first(a[<span class="number">2</span>:])</div><div class="line">Series(d,index=[<span class="string">'f'</span>, <span class="string">'e'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>])</div></pre></td></tr></table></figure></p>
+<p><img src="s1e24.png" alt=""></p>
+<h5 id="Reshaping-with-hierarchical-indexing"><a href="#Reshaping-with-hierarchical-indexing" class="headerlink" title="Reshaping with hierarchical indexing"></a>Reshaping with hierarchical indexing</h5><p>Hierarchical indexing provides a consistent way to rearrange data in a DataFrame. There are two primary actions:</p>
+<ul>
+<li>stack: this <code>rotates</code> or pivots from the columns in the data to the rows.</li>
+<li>unstack: this pivots from the rows into the columns.<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">data = DataFrame(np.arange(<span class="number">6</span>).reshape((<span class="number">2</span>, <span class="number">3</span>)),</div><div class="line">                 index=pd.Index([<span class="string">'Ohio'</span>, <span class="string">'Colorado'</span>], name=<span class="string">'state'</span>),</div><div class="line">                 columns=pd.Index([<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>], name=<span class="string">'number'</span>))</div><div class="line">data</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="s1e25.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">result = data.stack()</div><div class="line">result</div></pre></td></tr></table></figure>
+<p><img src="s1e26.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">result.unstack() <span class="comment"># revert the stacking process</span></div><div class="line"></div><div class="line">result.unstack(<span class="number">0</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e27.png" alt=""><br>Similar to <code>unstack</code>:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result.unstack(<span class="string">'state'</span>)</div></pre></td></tr></table></figure></p>
+<p><img src="s1e28.png" alt=""></p>
+<h5 id="Merge-with-hierarchical-indexing"><a href="#Merge-with-hierarchical-indexing" class="headerlink" title="Merge with hierarchical indexing"></a>Merge with hierarchical indexing</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">data_a = Series([<span class="string">'a1'</span>, <span class="string">'a2'</span>, <span class="string">'a3'</span>, <span class="string">'a4'</span>], index=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>])</div><div class="line">data_b = Series([<span class="string">'b4'</span>, <span class="string">'b5'</span>, <span class="string">'b6'</span>], index=[<span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>])</div><div class="line">data2 = pd.concat([data_a, data_b], keys=[<span class="string">'one'</span>, <span class="string">'two'</span>])</div><div class="line">data2</div></pre></td></tr></table></figure>
+<p><img src="s1e29.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data2.unstack()</div></pre></td></tr></table></figure>
+<p><img src="s1e30.png" alt=""></p>
+<p>Stacking filters out missing data by default:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data2.unstack().stack()</div></pre></td></tr></table></figure></p>
+<p><img src="s1e31.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data2.unstack().stack(dropna=<span class="keyword">False</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e32.png" alt=""></p>
+<h5 id="When-unstacking-in-a-DataFrame-the-level-unstacked-becomes-the-lowest-level-in-the-result"><a href="#When-unstacking-in-a-DataFrame-the-level-unstacked-becomes-the-lowest-level-in-the-result" class="headerlink" title="When unstacking in a DataFrame, the level unstacked becomes the lowest level in the result:"></a>When unstacking in a DataFrame, the level unstacked becomes the lowest level in the result:</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># preparation</span></div><div class="line">data = DataFrame(np.arange(<span class="number">6</span>).reshape((<span class="number">2</span>, <span class="number">3</span>)),</div><div class="line">                 index=pd.Index([<span class="string">'Ohio'</span>, <span class="string">'Colorado'</span>], name=<span class="string">'state'</span>),</div><div class="line">                 columns=pd.Index([<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>], name=<span class="string">'number'</span>))</div><div class="line">result = data.stack()</div><div class="line">result</div><div class="line"></div><div class="line">df = DataFrame(&#123;<span class="string">'left'</span>: result, <span class="string">'right'</span>: result + <span class="number">5</span>&#125;,</div><div class="line">               columns=pd.Index([<span class="string">'left'</span>, <span class="string">'right'</span>], name=<span class="string">'side'</span>))</div><div class="line">df</div></pre></td></tr></table></figure>
+<p><img src="s1e33.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.unstack(<span class="string">'state'</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e34.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.unstack(<span class="string">'state'</span>).stack(<span class="string">'side'</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e35.png" alt=""></p>
+<h5 id="Pivoting-LONG-to-WIDE-format"><a href="#Pivoting-LONG-to-WIDE-format" class="headerlink" title="Pivoting LONG to WIDE format"></a>Pivoting LONG to WIDE format</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">os.chdir(<span class="string">'F:/note/source/_posts/Data-manipulating'</span>)</div><div class="line">data = pd.read_csv(<span class="string">'data/macrodata.csv'</span>)</div><div class="line">data.head(<span class="number">5</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e36.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># (continued)</span></div><div class="line">periods = pd.PeriodIndex(year=data.year, quarter=data.quarter, name=<span class="string">'date'</span>)</div><div class="line"></div><div class="line">data = DataFrame(data.to_records(),</div><div class="line">                 columns=pd.Index([<span class="string">'realgdp'</span>, <span class="string">'infl'</span>, <span class="string">'unemp'</span>], name=<span class="string">'item'</span>),</div><div class="line">                 index=periods.to_timestamp(<span class="string">'D'</span>, <span class="string">'end'</span>))</div><div class="line"></div><div class="line">data.head(<span class="number">5</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e37.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># long format</span></div><div class="line">ldata = data.stack().reset_index().rename(columns=&#123;<span class="number">0</span>: <span class="string">'value1'</span>&#125;)</div><div class="line"><span class="comment"># wide format</span></div><div class="line">wdata = ldata.pivot(<span class="string">'date'</span>, <span class="string">'item'</span>, <span class="string">'value1'</span>)</div><div class="line"></div><div class="line">ldata.head(<span class="number">5</span>)</div><div class="line"></div><div class="line">wdata.head(<span class="number">5</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e42.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pivoted = ldata.pivot(<span class="string">'date'</span>, <span class="string">'item'</span>, <span class="string">'value1'</span>)</div><div class="line">pivoted.head()</div></pre></td></tr></table></figure>
+<p><img src="s1e39.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ldata[<span class="string">'value2'</span>] = np.random.randn(len(ldata))</div><div class="line">ldata.head(<span class="number">5</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e43.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pivoted = ldata.pivot(<span class="string">'date'</span>, <span class="string">'item'</span>)</div><div class="line">pivoted.head(<span class="number">5</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e44.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pivoted[<span class="string">'value1'</span>][:<span class="number">5</span>]</div></pre></td></tr></table></figure>
+<p><img src="s1e45.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># similarly</span></div><div class="line">ldata.head(<span class="number">5</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e46.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># (continued)</span></div><div class="line">unstacked = ldata.set_index([<span class="string">'date'</span>, <span class="string">'item'</span>]).unstack(<span class="string">'item'</span>)</div><div class="line">unstacked.head(<span class="number">5</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e47.png" alt=""></p>
+<h5 id="Removing-duplicates"><a href="#Removing-duplicates" class="headerlink" title="Removing duplicates"></a>Removing duplicates</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">data = DataFrame(&#123;<span class="string">'k1'</span>: [<span class="string">'one'</span>] * <span class="number">3</span> + [<span class="string">'two'</span>] * <span class="number">4</span>,</div><div class="line">                  <span class="string">'k2'</span>: [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>]&#125;)</div><div class="line">data</div></pre></td></tr></table></figure>
+<p><img src="s1e48.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data.duplicated()</div></pre></td></tr></table></figure>
+<p><img src="s1e49.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data.drop_duplicates()</div></pre></td></tr></table></figure>
+<p><img src="s1e50.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">data[<span class="string">'v1'</span>] = range(<span class="number">7</span>)</div><div class="line">data</div><div class="line">data.drop_duplicates([<span class="string">'k1'</span>])</div></pre></td></tr></table></figure>
+<p><img src="s1e51.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">data</div><div class="line">data.drop_duplicates([<span class="string">'k1'</span>, <span class="string">'k2'</span>], keep=<span class="string">'last'</span>)</div></pre></td></tr></table></figure>
+<p><img src="s1e53.png" alt=""></p>
+<h5 id="Data-recoding"><a href="#Data-recoding" class="headerlink" title="Data recoding"></a>Data recoding</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">data = DataFrame(&#123;<span class="string">'food'</span>: [<span class="string">'bacon'</span>, <span class="string">'pulled pork'</span>, <span class="string">'bacon'</span>, <span class="string">'Pastrami'</span>,</div><div class="line">                           <span class="string">'corned beef'</span>, <span class="string">'Bacon'</span>, <span class="string">'pastrami'</span>, <span class="string">'honey ham'</span>,</div><div class="line">                           <span class="string">'nova lox'</span>],</div><div class="line">                  <span class="string">'ounces'</span>: [<span class="number">4</span>, <span class="number">3</span>, <span class="number">12</span>, <span class="number">6</span>, <span class="number">7.5</span>, <span class="number">8</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>]&#125;)</div><div class="line">data</div><div class="line"></div><div class="line">meat_to_animal = &#123;</div><div class="line">  <span class="string">'bacon'</span>: <span class="string">'pig'</span>,</div><div class="line">  <span class="string">'pulled pork'</span>: <span class="string">'pig'</span>,</div><div class="line">  <span class="string">'pastrami'</span>: <span class="string">'cow'</span>,</div><div class="line">  <span class="string">'corned beef'</span>: <span class="string">'cow'</span>,</div><div class="line">  <span class="string">'honey ham'</span>: <span class="string">'pig'</span>,</div><div class="line">  <span class="string">'nova lox'</span>: <span class="string">'salmon'</span>&#125;</div></pre></td></tr></table></figure>
+<p><img src="s1e54.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">data[<span class="string">'animal_1'</span>] = data[<span class="string">'food'</span>].map(str.lower).map(meat_to_animal)</div><div class="line">data</div></pre></td></tr></table></figure>
+<p><img src="s1e56.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># similarly</span></div><div class="line">data[<span class="string">'animal_2'</span>] = data[<span class="string">'food'</span>].map(<span class="keyword">lambda</span> x: meat_to_animal[x.lower()])</div><div class="line">data</div></pre></td></tr></table></figure>
+<p><img src="s1e57.png" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/note/2017/10/01/groupby/" rel="next" title="group by">
+                <i class="fa fa-chevron-left"></i> group by
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">n0body</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/note/archives">
+            
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-manipulating"><span class="nav-text">Data manipulating</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Join-the-two-dataframes-along-rows"><span class="nav-text">Join the two dataframes along rows</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Join-the-two-dataframes-along-columns"><span class="nav-text">Join the two dataframes along columns</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Join-a-collection-of-series-into-data-frame"><span class="nav-text">Join a collection of series into data frame</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Merge-two-dataframes-along-the-subject-id-value"><span class="nav-text">Merge two dataframes along the subject_id value</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Merge-with-key-named-differently-across-data-frames"><span class="nav-text">Merge with key named differently across data frames</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Merge-with-outer-join"><span class="nav-text">Merge with outer join</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Merge-with-inner-join"><span class="nav-text">Merge with inner join</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Merge-with-right-join"><span class="nav-text">Merge with right join</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Merge-while-adding-a-suffix-to-duplicate-column-names"><span class="nav-text">Merge while adding a suffix to duplicate column names</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Merge-based-on-indexes"><span class="nav-text">Merge based on indexes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Merge-with-multiple-keys"><span class="nav-text">Merge with multiple keys</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Merge-with-mixed-types-of-keys"><span class="nav-text">Merge with mixed types of keys</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Merge-with-hierarchically-indexed-data"><span class="nav-text">Merge with hierarchically-indexed data</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Using-the-indexes-of-both-sides-of-the-merge"><span class="nav-text">Using the indexes of both sides of the merge</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Replace-missing-values"><span class="nav-text">Replace missing values</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Reshaping-with-hierarchical-indexing"><span class="nav-text">Reshaping with hierarchical indexing</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Merge-with-hierarchical-indexing"><span class="nav-text">Merge with hierarchical indexing</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#When-unstacking-in-a-DataFrame-the-level-unstacked-becomes-the-lowest-level-in-the-result"><span class="nav-text">When unstacking in a DataFrame, the level unstacked becomes the lowest level in the result:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Pivoting-LONG-to-WIDE-format"><span class="nav-text">Pivoting LONG to WIDE format</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Removing-duplicates"><span class="nav-text">Removing duplicates</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Data-recoding"><span class="nav-text">Data recoding</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">n0body</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/note/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/note/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/note/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/note/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/note/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/note/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/note/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/note/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/note/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/note/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/note/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/note/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/note/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/note/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/note/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
