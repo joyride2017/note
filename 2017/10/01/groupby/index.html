@@ -79,7 +79,7 @@
 <link href="/note/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python," />
 
 
 
@@ -95,12 +95,13 @@
 
 
 
-<meta name="description" content="$$\alpha \beta \gamma$$ Group by12345678from __future__ import divisionfrom numpy.random import randnimport numpy as npfrom pandas import Series, DataFrameimport pandasimport pandas as pd 12345df = Da">
+<meta name="description" content="$$\alpha \beta \gamma$$ Grouping data12345from __future__ import divisionfrom numpy.random import randnimport numpy as npfrom pandas import Series, DataFrameimport pandas as pd Suppose we have a data">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="group by">
+<meta property="og:title" content="grouping data in Python">
 <meta property="og:url" content="https://joyride2017.github.io/note/2017/10/01/groupby/index.html">
 <meta property="og:site_name" content="Local Playground">
-<meta property="og:description" content="$$\alpha \beta \gamma$$ Group by12345678from __future__ import divisionfrom numpy.random import randnimport numpy as npfrom pandas import Series, DataFrameimport pandasimport pandas as pd 12345df = Da">
+<meta property="og:description" content="$$\alpha \beta \gamma$$ Grouping data12345from __future__ import divisionfrom numpy.random import randnimport numpy as npfrom pandas import Series, DataFrameimport pandas as pd Suppose we have a data">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://joyride2017.github.io/note/2017/10/01/groupby/s1e01.png">
 <meta property="og:image" content="https://joyride2017.github.io/note/2017/10/01/groupby/s1e02.png">
@@ -143,10 +144,10 @@
 <meta property="og:image" content="https://joyride2017.github.io/note/2017/10/01/groupby/s1e43.png">
 <meta property="og:image" content="https://joyride2017.github.io/note/2017/10/01/groupby/s1e44.png">
 <meta property="og:image" content="https://joyride2017.github.io/note/2017/10/01/groupby/s1e45.png">
-<meta property="og:updated_time" content="2017-10-22T17:30:08.251Z">
+<meta property="og:updated_time" content="2017-10-25T05:20:00.257Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="group by">
-<meta name="twitter:description" content="$$\alpha \beta \gamma$$ Group by12345678from __future__ import divisionfrom numpy.random import randnimport numpy as npfrom pandas import Series, DataFrameimport pandasimport pandas as pd 12345df = Da">
+<meta name="twitter:title" content="grouping data in Python">
+<meta name="twitter:description" content="$$\alpha \beta \gamma$$ Grouping data12345from __future__ import divisionfrom numpy.random import randnimport numpy as npfrom pandas import Series, DataFrameimport pandas as pd Suppose we have a data">
 <meta name="twitter:image" content="https://joyride2017.github.io/note/2017/10/01/groupby/s1e01.png">
 
 
@@ -183,7 +184,7 @@
 
 
 
-  <title>group by | Local Playground</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>grouping data in Python | Local Playground</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -307,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">group by</h1>
+          <h1 class="post-title" itemprop="name headline">grouping data in Python</h1>
         
 
         <div class="post-meta">
@@ -358,24 +359,24 @@
 
       
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><span>$$\alpha \beta \gamma$$</span><!-- Has MathJax -->
-<h4 id="Group-by"><a href="#Group-by" class="headerlink" title="Group by"></a>Group by</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> division</div><div class="line"></div><div class="line"><span class="keyword">from</span> numpy.random <span class="keyword">import</span> randn</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series, DataFrame</div><div class="line"><span class="keyword">import</span> pandas</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">df = DataFrame(&#123;<span class="string">'key1'</span> : [<span class="string">'a'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>],</div><div class="line">                <span class="string">'key2'</span> : [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'one'</span>],</div><div class="line">                <span class="string">'data1'</span> : np.random.randn(<span class="number">5</span>),</div><div class="line">                <span class="string">'data2'</span> : np.random.randn(<span class="number">5</span>)&#125;)</div><div class="line">df</div></pre></td></tr></table></figure>
+<h4 id="Grouping-data"><a href="#Grouping-data" class="headerlink" title="Grouping data"></a>Grouping data</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> division</div><div class="line"><span class="keyword">from</span> numpy.random <span class="keyword">import</span> randn</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series, DataFrame</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div></pre></td></tr></table></figure>
+<p>Suppose we have a data frame:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">df = DataFrame(&#123;<span class="string">'key1'</span> : [<span class="string">'a'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>],</div><div class="line">                <span class="string">'key2'</span> : [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'one'</span>],</div><div class="line">                <span class="string">'data1'</span> : np.random.randn(<span class="number">5</span>),</div><div class="line">                <span class="string">'data2'</span> : np.random.randn(<span class="number">5</span>)&#125;)</div><div class="line">df</div></pre></td></tr></table></figure></p>
 <p><img src="s1e01.png" alt=""></p>
-<h5 id="Group-by-columns"><a href="#Group-by-columns" class="headerlink" title="Group by columns"></a>Group by columns</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># case 1</span></div><div class="line">grouped = df[<span class="string">'data1'</span>].groupby(df[<span class="string">'key1'</span>])</div><div class="line">grouped</div><div class="line">grouped.mean()</div></pre></td></tr></table></figure>
+<h5 id="Group-by-columns"><a href="#Group-by-columns" class="headerlink" title="Group by columns"></a>Group by columns</h5><p>To get the mean of data1 by groups of key1:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># case 1</span></div><div class="line">grouped = df[<span class="string">'data1'</span>].groupby(df[<span class="string">'key1'</span>])</div><div class="line">grouped.mean()</div></pre></td></tr></table></figure></p>
 <p><img src="s1e02.png" alt=""></p>
-<p>Grouping by multiple columns:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">means = df[<span class="string">'data1'</span>].groupby([df[<span class="string">'key1'</span>], df[<span class="string">'key2'</span>]]).mean()</div><div class="line">means</div></pre></td></tr></table></figure></p>
+<p>To get the mean of data1 by groups of the pair of key1 and key2:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># case 2: multiple grouping keys</span></div><div class="line">means = df[<span class="string">'data1'</span>].groupby([df[<span class="string">'key1'</span>], df[<span class="string">'key2'</span>]]).mean()</div><div class="line">means</div></pre></td></tr></table></figure></p>
 <p><img src="s1e03.png" alt=""></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.groupby(<span class="string">'key1'</span>).mean()</div></pre></td></tr></table></figure>
+<p>To apply grouping commands on whole data frame:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># case 1</span></div><div class="line">df.groupby(<span class="string">'key1'</span>).mean()</div></pre></td></tr></table></figure></p>
 <p><img src="s1e05.png" alt=""></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.groupby([<span class="string">'key1'</span>, <span class="string">'key2'</span>]).mean()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># case 2</span></div><div class="line">df.groupby([<span class="string">'key1'</span>, <span class="string">'key2'</span>]).mean()</div></pre></td></tr></table></figure>
 <p><img src="s1e06.png" alt=""></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.groupby([<span class="string">'key1'</span>, <span class="string">'key2'</span>]).size()</div></pre></td></tr></table></figure>
+<p>To obtain the summary of group size:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.groupby([<span class="string">'key1'</span>, <span class="string">'key2'</span>]).size()</div></pre></td></tr></table></figure></p>
 <p><img src="s1e07.png" alt=""></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># case 2</span></div><div class="line">states = np.array([<span class="string">'Ohio'</span>, <span class="string">'California'</span>, <span class="string">'California'</span>, <span class="string">'Ohio'</span>, <span class="string">'Ohio'</span>])</div><div class="line">years = np.array([<span class="number">2005</span>, <span class="number">2005</span>, <span class="number">2006</span>, <span class="number">2005</span>, <span class="number">2006</span>])</div><div class="line">df[<span class="string">'data1'</span>].groupby([states, years]).mean()</div></pre></td></tr></table></figure>
+<p>To set up grouping attributes for each entry by external ndarray:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">states = np.array([<span class="string">'Ohio'</span>, <span class="string">'California'</span>, <span class="string">'California'</span>, <span class="string">'Ohio'</span>, <span class="string">'Ohio'</span>])</div><div class="line">years = np.array([<span class="number">2005</span>, <span class="number">2005</span>, <span class="number">2006</span>, <span class="number">2005</span>, <span class="number">2006</span>])</div><div class="line">df[<span class="string">'data1'</span>].groupby([states, years]).mean()</div><div class="line">df</div></pre></td></tr></table></figure></p>
 <p><img src="s1e04.png" alt=""></p>
-<h5 id="Operations-over-groups"><a href="#Operations-over-groups" class="headerlink" title="Operations over groups"></a>Operations over groups</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">df</div><div class="line"><span class="keyword">for</span> name, group <span class="keyword">in</span> df.groupby(<span class="string">'key1'</span>):</div><div class="line">    print(name)</div><div class="line">    print(group)</div><div class="line"></div><div class="line"><span class="keyword">for</span> (k1, k2), group <span class="keyword">in</span> df.groupby([<span class="string">'key1'</span>, <span class="string">'key2'</span>]):</div><div class="line">    print((k1, k2))</div><div class="line">    print(group)</div></pre></td></tr></table></figure>
+<h5 id="Iterations-on-attributes-of-groups"><a href="#Iterations-on-attributes-of-groups" class="headerlink" title="Iterations on attributes of groups"></a>Iterations on attributes of groups</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">df</div><div class="line"><span class="keyword">for</span> name, group <span class="keyword">in</span> df.groupby(<span class="string">'key1'</span>):</div><div class="line">    print(name) <span class="comment"># the levels (codes) in key1</span></div><div class="line">    print(group) <span class="comment"># the corresponding summary of columns other than key1</span></div><div class="line"></div><div class="line"><span class="comment"># the idea can be extended to multiple keys:</span></div><div class="line"><span class="keyword">for</span> (k1, k2), group <span class="keyword">in</span> df.groupby([<span class="string">'key1'</span>, <span class="string">'key2'</span>]):</div><div class="line">    print((k1, k2))</div><div class="line">    print(group)</div></pre></td></tr></table></figure>
 <p><img src="s1e08.png" alt=""></p>
-<p>Display in dictionary format:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pieces = dict(list(df.groupby(<span class="string">'key1'</span>)))</div><div class="line">pieces</div><div class="line">pieces[<span class="string">'b'</span>]</div></pre></td></tr></table></figure></p>
+<p>To display group information in Dictionary format:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pieces = dict(list(df.groupby(<span class="string">'key1'</span>))) <span class="comment"># each level of key1 turns out to be keys in the created dictionary.</span></div><div class="line">pieces <span class="comment"># the whole grouped data</span></div><div class="line">pieces[<span class="string">'b'</span>] <span class="comment"># only have two entries</span></div></pre></td></tr></table></figure></p>
 <p><img src="s1e10.png" alt=""></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.dtypes</div></pre></td></tr></table></figure>
 <p><img src="s1e11.png" alt=""></p>
@@ -423,7 +424,11 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result[<span class="string">'tip_pct'</span>]</div></pre></td></tr></table></figure>
 <p><img src="s1e35.png" alt=""></p>
 <p>Rename groups:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># As above, a list of tuples with custom names can be passed:</span></div><div class="line">ftuples = [(<span class="string">'Durchschnitt'</span>, <span class="string">'mean'</span>), (<span class="string">'Abweichung'</span>, np.var)]</div><div class="line">grouped[<span class="string">'tip_pct'</span>, <span class="string">'total_bill'</span>].agg(ftuples)</div></pre></td></tr></table></figure></p>
-<p><img src="s1e36.png" alt=""></p>
+<p><img src="s1e36.png" alt=""><br>More exercises:</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/24707208/subtract-subgroup-averages-from-individuals-without-resorting-to-for-loop" target="_blank" rel="external">subtract group mean from respective group</a></li>
+<li><a href="https://stackoverflow.com/questions/32832624/how-to-subtract-rows-within-groups-of-a-dataframe" target="_blank" rel="external">subtract rows within groups</a></li>
+</ol>
 <h6 id="heterogeneous-agg-functions"><a href="#heterogeneous-agg-functions" class="headerlink" title="heterogeneous agg functions"></a>heterogeneous agg functions</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Now, suppose you wanted to apply potentially different functions to one or more of the columns.</span></div><div class="line">grouped.agg(&#123;<span class="string">'tip'</span> : np.max, <span class="string">'size'</span> : <span class="string">'sum'</span>&#125;)</div></pre></td></tr></table></figure>
 <p><img src="s1e37.png" alt=""></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">grouped.agg(&#123;<span class="string">'tip_pct'</span> : [<span class="string">'min'</span>, <span class="string">'max'</span>, <span class="string">'mean'</span>, <span class="string">'std'</span>],</div><div class="line">             <span class="string">'size'</span> : <span class="string">'sum'</span>&#125;)</div></pre></td></tr></table></figure>
@@ -460,6 +465,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/note/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
 
       
       
@@ -469,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/note/2017/09/08/python-basics/" rel="next" title="Python Cookbook">
-                <i class="fa fa-chevron-left"></i> Python Cookbook
+              <a href="/note/2017/09/08/python-basics/" rel="next" title="python modules: Numpy & Pandas">
+                <i class="fa fa-chevron-left"></i> python modules: Numpy & Pandas
               </a>
             
           </div>
@@ -557,7 +568,7 @@
             
               <a href="/note/archives/">
             
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -565,6 +576,15 @@
 
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/note/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -596,7 +616,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Group-by"><span class="nav-text">Group by</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Group-by-columns"><span class="nav-text">Group by columns</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Operations-over-groups"><span class="nav-text">Operations over groups</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Group-by-data-types"><span class="nav-text">Group by data types</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Subgroups"><span class="nav-text">Subgroups</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Subset-by-multiple-keys"><span class="nav-text">Subset by multiple keys</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Group-non-numeric-data"><span class="nav-text">Group non-numeric data</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Count-members-of-groups"><span class="nav-text">Count members of groups</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Group-by-functions"><span class="nav-text">Group by functions</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Use-index-levels"><span class="nav-text">Use index levels</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Data-aggregation"><span class="nav-text">Data aggregation</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Quantile"><span class="nav-text">Quantile</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#by-custome-made-function"><span class="nav-text">by custome-made function</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Exercise-groupby-agg"><span class="nav-text">Exercise: groupby, agg</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#heterogeneous-agg-functions"><span class="nav-text">heterogeneous agg functions</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Unindexed"><span class="nav-text">Unindexed</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Example-display-the-largest-few-rows"><span class="nav-text">Example: display the largest few rows</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Qunatile"><span class="nav-text">Qunatile</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Filling-missing-values"><span class="nav-text">Filling missing values</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Random-sampling"><span class="nav-text">Random sampling</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Group-weighted-stat"><span class="nav-text">Group weighted stat</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Groupwise-regression"><span class="nav-text">Groupwise regression</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Pivot-tables"><span class="nav-text">Pivot tables</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Application-II"><span class="nav-text">Application II</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Raw-data"><span class="nav-text">Raw data</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Donation-statistics"><span class="nav-text">Donation statistics</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Bucketing-donation-amounts"><span class="nav-text">Bucketing donation amounts</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Donation-stat-by-state"><span class="nav-text">Donation stat by state</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Grouping-data"><span class="nav-text">Grouping data</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Group-by-columns"><span class="nav-text">Group by columns</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Iterations-on-attributes-of-groups"><span class="nav-text">Iterations on attributes of groups</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Group-by-data-types"><span class="nav-text">Group by data types</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Subgroups"><span class="nav-text">Subgroups</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Subset-by-multiple-keys"><span class="nav-text">Subset by multiple keys</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Group-non-numeric-data"><span class="nav-text">Group non-numeric data</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Count-members-of-groups"><span class="nav-text">Count members of groups</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Group-by-functions"><span class="nav-text">Group by functions</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Use-index-levels"><span class="nav-text">Use index levels</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Data-aggregation"><span class="nav-text">Data aggregation</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Quantile"><span class="nav-text">Quantile</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#by-custome-made-function"><span class="nav-text">by custome-made function</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Exercise-groupby-agg"><span class="nav-text">Exercise: groupby, agg</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#heterogeneous-agg-functions"><span class="nav-text">heterogeneous agg functions</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Unindexed"><span class="nav-text">Unindexed</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Example-display-the-largest-few-rows"><span class="nav-text">Example: display the largest few rows</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Qunatile"><span class="nav-text">Qunatile</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Filling-missing-values"><span class="nav-text">Filling missing values</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Random-sampling"><span class="nav-text">Random sampling</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Group-weighted-stat"><span class="nav-text">Group weighted stat</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Groupwise-regression"><span class="nav-text">Groupwise regression</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Pivot-tables"><span class="nav-text">Pivot tables</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Application-II"><span class="nav-text">Application II</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Raw-data"><span class="nav-text">Raw data</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Donation-statistics"><span class="nav-text">Donation statistics</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Bucketing-donation-amounts"><span class="nav-text">Bucketing donation amounts</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Donation-stat-by-state"><span class="nav-text">Donation stat by state</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
