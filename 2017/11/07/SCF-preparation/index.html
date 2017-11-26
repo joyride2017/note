@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="1983Yang uses the edited and imputed version for 1983.  Weights for the 1983 survey were constructed in two phases. Relative weights for the area-probability sample were constructed to compensate for">
+<meta name="description" content="Survey data during the periods 1983 to 2013">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SCF preparation">
 <meta property="og:url" content="https://joyride2017.github.io/note/2017/11/07/SCF-preparation/index.html">
 <meta property="og:site_name" content="Local Playground">
-<meta property="og:description" content="1983Yang uses the edited and imputed version for 1983.  Weights for the 1983 survey were constructed in two phases. Relative weights for the area-probability sample were constructed to compensate for">
+<meta property="og:description" content="Survey data during the periods 1983 to 2013">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-11T22:35:25.836Z">
+<meta property="og:updated_time" content="2017-11-24T21:30:49.106Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SCF preparation">
-<meta name="twitter:description" content="1983Yang uses the edited and imputed version for 1983.  Weights for the 1983 survey were constructed in two phases. Relative weights for the area-probability sample were constructed to compensate for">
+<meta name="twitter:description" content="Survey data during the periods 1983 to 2013">
 
 
 
@@ -301,6 +301,10 @@
           
 
           
+              <div class="post-description">
+                  Survey data during the periods 1983 to 2013
+              </div>
+          
 
         </div>
       </header>
@@ -318,7 +322,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="1983"><a href="#1983" class="headerlink" title="1983"></a>1983</h1><p>Yang uses the edited and imputed version for 1983.</p>
 <blockquote>
 <p>Weights for the 1983 survey were constructed in two phases. Relative weights for the <strong>area-probability sample</strong> were constructed to compensate for differential <strong>non-response rates</strong> across the survey’s 75 primary sampling units. Those weights were further <strong>post-stratified</strong> by region and degree of urbanization to <strong>reflect population estimates</strong> from the March 1983 Current Population Survey (CPS).</p>
-<p>1983:   February - August ‘83<br>1986:   June - September ‘86<br>1989:   October ‘89 - March ‘90 </p>
+<p>1983:   February - August ‘83<br>1986:   June - September ‘86<br>1989:   October ‘89 - March ‘90</p>
 </blockquote>
 <ul>
 <li><p>Full public data set: edited and imputed version<br>Final survey data COPY/EXPORT version (3.9 MB) <a href="https://www.federalreserve.gov/econres/files/1983_scf83bx.zip" target="_blank" rel="external">1983_scf83bx.zip</a>. Variables are prefixed with “B” and contain variables “V1 (in uncleaned version)” and “B1 (for edited version)” as unique observation identifier. Stata version <a href="https://www.federalreserve.gov/econres/files/1983_scf83bs.zip" target="_blank" rel="external">1983_scf83bs.zip</a></p>
@@ -326,18 +330,18 @@
 <p>Full sample seems to refer to the integration of <strong>area probability sample</strong> and <strong>high-income sample</strong>.</p>
 <p><code>High-Income and full sample weights</code>: The weights for the combined sample containing both the area probability and high-income samples were more difficult to compute, and are more subject to question. Unfortunately full information on the high-income sampling procedure is not publicly available. Additional complications stem from the fact that the high-income observations were drawn from a 1980 sampling frame of taxpayers (but were contacted in 1983) and the fact that the reporting basis for tax files (individuals or married couples) is not always the same as the survey (families).</p>
 <p>The <strong>fitted probit equation</strong> results can be used in two ways. The <strong>inverse of the predicted probability that an observation would have been included in the cleaned sample (conditioned on the predictor variables used), can be used to weight observations in analysis</strong>. In practice, this procedure implies higher weights for observations holding a large number of different assets.</p>
-<p>Parameter format needs to be ‘xport’ in the Python Pandas command, pandas.read_sas.<br><code>B3004</code>, 1983 post-stratification sampling weights scheme, is used. Division by five is needed for correct weighted statistics. This scheme is essentially the same as that used by the Census Bureau in reporting the March 1983 CPS survey, which used a similar sampling strategy as that of the SCF. </p>
+<p>Parameter format needs to be ‘xport’ in the Python Pandas command, pandas.read_sas.<br><code>B3004</code>, 1983 post-stratification sampling weights scheme, is used. Division by five is needed for correct weighted statistics. This scheme is essentially the same as that used by the Census Bureau in reporting the March 1983 CPS survey, which used a similar sampling strategy as that of the SCF.</p>
 <p>All variables listed here have a “B” prefix followed by a four digit number ranging from 3001 to5749.  The original uncleaned survey responses are contained invariables with a “V” prefix.  These variables range from V1 to V2613.The codes for the “V” variables are described in the original survey codebook released by the SRC.  We note, though, that the “B” variables contain all the same types of information as those contained in the”V” variables.  Thus, for most analyses, it is possible to use the “B”variables without reference to the “V” variables.</p>
 <p><strong>B3305</strong>     GROSS ASSETS EXCLUDING NON-THRIFT PENSIONS.<br>The sum of paper assets plus current value of home plus gross value of other properties plus total value of vehicles plus net value of <strong>businesses</strong> with and without management interest (B3304 + B3501 + B3502).  No missing values. xxxxxxxx. dollars (5 to 86,857,433) 0. none (147 cases)<br><strong>B3324</strong>    NET WORTH.<br>Gross assets excluding pensions plus total net present value of pensions minus <strong>total debt</strong> (B3305 + B3316 - B3320).  No missing values (currently the same as B3323). xxxxxxxx. dollars (-73,400 to 86,852,003) 0. none (105 cases)</p>
 </blockquote>
 <p>Codebook <a href="https://www.federalreserve.gov/econres/files/1983_codebk83.txt" target="_blank" rel="external">1983_codebk83</a><br>Appendix (inclusing occupation and industry codes) <a href="https://www.federalreserve.gov/econres/files/1983_appendix83.pdf" target="_blank" rel="external">1983_appendix83.pdf</a><br>Codebook contains the text, variable names, and responses for the questions asked in the survey.</p>
 <p>​</p>
 <blockquote>
-<p><strong>Why uses weights?</strong> For a variety of reasons, final household survey data will rarely represent a random draw from the U.S. population.  Even if the original survey design were random, different types of households will have different likelihoods of completing interviews. Very high and very low income households, for example, are thought to be less likely to participate in surveys.  The 1983 SCF had an additional source of non-randomness because of the inclusion of the high-income supplement. These factors necessitated the construction of weighting variables to compensate for known or estimable sources of stratification in the final data set. </p>
-<p>Inclusion of households in the <strong>final “cleaned” data set</strong> described in this manual results from a series of implicit stratified selection criteria. There are four major sources of implicit <code>stratification</code>. (1) there are different <code>response rates</code> for different household types. (2) The sample may not fully reflect U.S. population due to <code>sampling error</code> in the survey itself (in the sense that any random sample will not have the same average characteristics as the population from which it is drawn). (3) Not all survey observations were <code>usable</code> for analysis because of significant missing information due to deliberate or inadvertent actions.  In specific, of the 3,824 area probability sample survey households included in the original SRC data tape, 159 observations were dropped in the cleaned file. Finally, the SCF sample is drawn from both the area probability and high-income sampling frames. If both samples are used, it is necessary to properly mix them to have a representative national sample. </p>
+<p><strong>Why uses weights?</strong> For a variety of reasons, final household survey data will rarely represent a random draw from the U.S. population.  Even if the original survey design were random, different types of households will have different likelihoods of completing interviews. Very high and very low income households, for example, are thought to be less likely to participate in surveys.  The 1983 SCF had an additional source of non-randomness because of the inclusion of the high-income supplement. These factors necessitated the construction of weighting variables to compensate for known or estimable sources of stratification in the final data set.</p>
+<p>Inclusion of households in the <strong>final “cleaned” data set</strong> described in this manual results from a series of implicit stratified selection criteria. There are four major sources of implicit <code>stratification</code>. (1) there are different <code>response rates</code> for different household types. (2) The sample may not fully reflect U.S. population due to <code>sampling error</code> in the survey itself (in the sense that any random sample will not have the same average characteristics as the population from which it is drawn). (3) Not all survey observations were <code>usable</code> for analysis because of significant missing information due to deliberate or inadvertent actions.  In specific, of the 3,824 area probability sample survey households included in the original SRC data tape, 159 observations were dropped in the cleaned file. Finally, the SCF sample is drawn from both the area probability and high-income sampling frames. If both samples are used, it is necessary to properly mix them to have a representative national sample.</p>
 <p><strong>Techniques</strong></p>
 <ul>
-<li><p>Area Probability sample weights: The original SRC sampling frame called for sampling 6,062 housing units in the cross-section. If each housing unit had yielded an interview, each observation would represent 13,333 housing units. In fact as shown earlier in table 1, only about 89 percent of the housing units were occupied, and of these, only about 71 percent (<strong>3824</strong>) contained households who were willing to participate in the survey. Obviously, the exact characteristics of the non-responding households are unknown; however, the response and occupancy rate differed significantly across the survey’s 75 PSUs. The <strong>“non-response” weight</strong> adjusts for this differential non-response. This weight is equal to <strong>the reciprocal of the household response rate</strong> for the PSU for which the household belongs. This weight should compensate for some location-related characteristics associated with non-response and occupancy.  </p>
+<li><p>Area Probability sample weights: The original SRC sampling frame called for sampling 6,062 housing units in the cross-section. If each housing unit had yielded an interview, each observation would represent 13,333 housing units. In fact as shown earlier in table 1, only about 89 percent of the housing units were occupied, and of these, only about 71 percent (<strong>3824</strong>) contained households who were willing to participate in the survey. Obviously, the exact characteristics of the non-responding households are unknown; however, the response and occupancy rate differed significantly across the survey’s 75 PSUs. The <strong>“non-response” weight</strong> adjusts for this differential non-response. This weight is equal to <strong>the reciprocal of the household response rate</strong> for the PSU for which the household belongs. This weight should compensate for some location-related characteristics associated with non-response and occupancy.</p>
 </li>
 <li><p>The second type of stratification cited above can be adjusted for by taking into account <strong>how the final area probability sample (weighted for “non-response”) </strong>compares with the population<strong> according to certain select characteristics. Obviously the sample could be adjusted for any one of a number of characteristics (age, income, size of household, region, etc.). SRC elected to compensate for regional sampling error by computing a “post-stratification” weight which adjusts the sample to have the same relative population as the 1980 census in the four major sample regions (Northeast, South, North Central, and West) further subdivided into urban and rural. We computed a similar weight, but </strong>post-stratified<strong> to the population and urban/rural definitions represented by the </strong>March 1983 CPS**.</p>
 </li>
@@ -354,9 +358,9 @@
 <p><strong>What’s the impact of unweighted SCF survey data?</strong> The unweighted sample clearly shows an over-representation of elderly, high-income, wealthy, white, and married households relative to all of the weighted samples.</p>
 <p><strong>How is the compatibility of SCF data with others?</strong>  The 1983 SCF overstates comparable CPS income by about 6 percent. Most of this overstatement stems from business income and income from dividends, trusts, and real estate. Interestingly, in a comparison of data with an “independent source” in 1983, the Census Bureau concluded that CPS income data “underreported by about 10 percent” (U.S. Bureau of the Census (1985, p. 218)). The SCF also overstates IRS household income by about 7 percent. Much of the discrepancy can be explained by the SCF’s failure to find significant business, rental, and security losses.</p>
 <p>B3505 (A)     LEGAL STRUCTURE.</p>
-<p>B3518 (B)     All missing values were imputed.  Imputations were done with conditional mean tables with randomization.        </p>
+<p>B3518 (B)     All missing values were imputed.  Imputations were done with conditional mean tables with randomization.</p>
 <ol>
-<li>proprietorship (254/39 cases)        </li>
+<li>proprietorship (254/39 cases)</li>
 <li>partnership (170/49 cases)</li>
 <li>corporation (247/60 cases)</li>
 <li>INAP (3432/3955 cases)</li>
@@ -368,7 +372,7 @@
 <blockquote>
 <p>The 1986 SCF – sponsored by the Federal Reserve Board, the Department of Health and Human Services, the Office of the Comptroller of the Currency, and the General Accounting Office – was a more limited 27-minute <strong>re-interview survey</strong> with respondents to the <strong>1983 SCF</strong>.  When 1983 couples divorced or separated, the survey followed both parties. However, other members who left the household, such as young adults were not followed. A total of 2,822 interviews were completed, by telephone, between <code>June</code> and <code>September</code> 1986. As in 1983, the unit of observation was the family.</p>
 <p>For many purposes, it is useful to view the 1986 sample as a sub-sample of the 1983 survey. However, it is also possible to view the 1986 sample as a <strong>new cross-section</strong>, representative of the structure of the 1986 household population. Accordingly, we have constructed two sampling weights for the 1986 sample.  The first weight – which we term the “1983/86 weight” – was designed to allow the sample of households reached in 1986 to represent the entire 1983 sample. The second 1986 sample weight – deemed the “<strong>1986 weight</strong>“ – may be used to represent the 1986 household population.</p>
-<p>Because at any given time a significant proportion of younger adults are in school or the military, or live with their parents, those younger people living independently at the time of the 1983 SCF are <strong>unlikely to represent</strong> the population of households of their cohort three years later. Therefore, the sample has not been weighted to represent the population of <code>households with heads aged 24 and under in 1986</code>. Households that fell into that group in 1986 were assigned weights adjusted for attrition and marital status change, but were not post-stratified to 1986 control totals. For this reason, we strongly recommend that <code>only those households aged 25 or more in 1986</code> be used for <strong>analysis of changes</strong>. </p>
+<p>Because at any given time a significant proportion of younger adults are in school or the military, or live with their parents, those younger people living independently at the time of the 1983 SCF are <strong>unlikely to represent</strong> the population of households of their cohort three years later. Therefore, the sample has not been weighted to represent the population of <code>households with heads aged 24 and under in 1986</code>. Households that fell into that group in 1986 were assigned weights adjusted for attrition and marital status change, but were not post-stratified to 1986 control totals. For this reason, we strongly recommend that <code>only those households aged 25 or more in 1986</code> be used for <strong>analysis of changes</strong>.</p>
 </blockquote>
 <ul>
 <li><p>Full public data set: edited and imputed version</p>
@@ -405,7 +409,7 @@ age 65 or older), 4=other groups not working (mainly those under
 65 and out of the labor force).
 </code></pre><p>Occupation classification for head (OCCAT2):</p>
 <pre><code>1=managerial/professional 2=technical/sales/services,
-3=other (incl. production/craft/repair workers, operators, 
+3=other (incl. production/craft/repair workers, operators,
 laborers, farmers, foresters, fishers) 4=not working.
 </code></pre></blockquote>
 <p>​</p>
@@ -437,11 +441,11 @@ laborers, farmers, foresters, fishers) 4=not working.
 <blockquote>
 <p><strong>12-month percent change vs. annual percent change</strong></p>
 <p>From a statistical perspective, each of these types of indexes has its advantages. A 12-month percent change from, say, December-to-December, is arguably a more <strong>recent</strong> estimate of price change than an annual average percent change. Said another way, the December-to-December percent change is the <strong>most recent 12-month</strong> percent change in a year, while the annual average percent change reflects the change in the <strong>average index for all 12 months</strong> of one year to the average index for all 12 months the next year.</p>
-<p>The December-to-December index percent change, however, tends to be more volatile than the percent change in the annual average index. Annual average indexes are based on 12 monthly data points which, when averaged, reduce volatility by smoothing out the highs and lows. </p>
+<p>The December-to-December index percent change, however, tends to be more volatile than the percent change in the annual average index. Annual average indexes are based on 12 monthly data points which, when averaged, reduce volatility by smoothing out the highs and lows.</p>
 <p><strong>Seasonal adjustment</strong></p>
 <p>By using seasonally adjusted data, some users find it easier to see the underlying trend in short-term price changes. It is often difficult to tell from raw (unadjusted) statistics whether developments between any 2 months reflect changing economic conditions or only normal seasonal patterns. Therefore, many economic series, including the CPI, are adjusted to remove the effect of seasonal influences-those which occur at the same time and in about the same magnitude every year. Among these influences are price movements resulting from changing weather conditions, production cycles, changeovers of models, and holidays.</p>
 <p><strong>CPI can not be used to compare living costs among areas</strong></p>
-<p>No, an individual area index measures how much prices have changed over a specific period in that particular area; it does not show whether prices or living costs are higher or lower in that area relative to another. In general, <strong>the composition of the market basket</strong> and the relative prices of goods and services in the market basket during the expenditure base period vary substantially across areas. </p>
+<p>No, an individual area index measures how much prices have changed over a specific period in that particular area; it does not show whether prices or living costs are higher or lower in that area relative to another. In general, <strong>the composition of the market basket</strong> and the relative prices of goods and services in the market basket during the expenditure base period vary substantially across areas.</p>
 <p>The CPI cannot be used to measure differences in price levels or living costs between one place and another; it measures only time-to-time changes in each place. A higher index for one area does not necessarily mean that prices are higher there than in another area with a lower index.</p>
 <p><strong>Drawbacks of the traditional CPI-U</strong></p>
 <p>Inflation—a general increase in the prices of goods and services—can be measured in various ways. Traditionally, the rate of inflation has been computed by multiplying the percentage price change for each item that people purchase by that item’s share of consumer spending in a period before the prices changed and then adding up those changes for all items. But the actual growth in the cost of living—the amount of additional resources that someone would need to maintain the same standard of living this year as last year in the face of rising prices—is generally lower than the rate of inflation when measured that way. The reason for the difference is that many people can lessen the impact of inflation on their standard of living by purchasing fewer goods or services that have risen in price and, instead, buying more goods or services that have not risen in price or have risen less.</p>
@@ -484,8 +488,8 @@ laborers, farmers, foresters, fishers) 4=not working.
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/note/2017/10/25/CBS-tv-series/" rel="next" title="CBS tv series">
-                <i class="fa fa-chevron-left"></i> CBS tv series
+              <a href="/note/2017/10/24/China-s-prospect/" rel="next" title="China's prospect">
+                <i class="fa fa-chevron-left"></i> China's prospect
               </a>
             
           </div>
@@ -568,7 +572,7 @@ laborers, farmers, foresters, fishers) 4=not working.
             
               <a href="/note/archives/">
             
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
