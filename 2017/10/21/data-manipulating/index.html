@@ -1,106 +1,22 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="en">
+<html>
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
+  <title>Python Data Mingling | Data Science</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <link href="/note/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
+  <meta name="keywords" content="python" />
   
   
   
   
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/note/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/note/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="python," />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/note/favicon.ico?v=5.1.2" />
-
-
-
-
-
-
-<meta name="description" content="1. Merge, MultiIndex, Pivot (Long and Wide) 2. Duplicate, Missing Value, Recode (Map)">
+  <meta name="description" content="1. Merge, MultiIndex, Pivot (Long and Wide) 2. Duplicate, Missing Value, Recode (Map)">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python Data mingling">
+<meta property="og:title" content="Python Data Mingling">
 <meta property="og:url" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/index.html">
-<meta property="og:site_name" content="Local Playground">
+<meta property="og:site_name" content="Data Science">
 <meta property="og:description" content="1. Merge, MultiIndex, Pivot (Long and Wide) 2. Duplicate, Missing Value, Recode (Map)">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e01.png">
@@ -156,223 +72,119 @@
 <meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e57.png">
 <meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e61.png">
 <meta property="og:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e62.png">
-<meta property="og:updated_time" content="2017-11-26T00:14:45.068Z">
+<meta property="og:updated_time" content="2017-11-26T15:27:04.066Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python Data mingling">
+<meta name="twitter:title" content="Python Data Mingling">
 <meta name="twitter:description" content="1. Merge, MultiIndex, Pivot (Long and Wide) 2. Duplicate, Missing Value, Recode (Map)">
 <meta name="twitter:image" content="https://joyride2017.github.io/note/2017/10/21/data-manipulating/s1e01.png">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/note/',
-    scheme: 'Gemini',
-    version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="https://joyride2017.github.io/note/2017/10/21/data-manipulating/"/>
-
-
-
-
-
-  <title>Python Data mingling | Local Playground</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
+  <link rel="icon" href="/note/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
 
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/note/css/style.css">
 
+  <script src="/note/js/jquery-3.1.1.min.js"></script>
 
-
-
-
-
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/note/css/bootstrap.css" >
+  <link rel="stylesheet" href="/note/css/fashion.css" >
+  <link rel="stylesheet" href="/note/css/glyphs.css" ><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
 
   
-  
-    
-  
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
 
-    <div class="custom-logo-site-title">
-      <a href="/note/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Local Playground</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
+          <h1 class="site-title">
+            
+              <a href="/note/" title="Data Science" rel="home"> Data Science </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/note/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/note/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/note/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/note/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/note/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
   </div>
+</header>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
         
-        <li class="menu-item menu-item-home">
-          <a href="/note/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/note/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
+          <section id="main" style="float:none;"><article id="post-data-manipulating" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://joyride2017.github.io/note/note/2017/10/21/data-manipulating/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="n0body">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/note/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Local Playground">
-    </span>
-
     
-      <header class="post-header">
-
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">Python Data mingling</h1>
-        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Python Data Mingling
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-21T23:40:11-05:00">
-                2017-10-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-              <div class="post-description">
-                  1. Merge, MultiIndex, Pivot (Long and Wide) 2. Duplicate, Missing Value, Recode (Map)
-              </div>
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-meta">
       
-      
+	<a href="/note/2017/10/21/data-manipulating/" class="article-date">
+	  <time datetime="2017-10-22T04:40:11.000Z" itemprop="datePublished">October 21, 2017</time>
+	</a>
 
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  VIEWS<span id="busuanzi_value_page_pv"></span> TIMES
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
       
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Reference: <a href="https://chrisalbon.com/python/pandas_join_merge_dataframe.html" target="_blank" rel="external">Chris Albon</a></p>
 <h4 id="Merge-MultiIndex-Pivot-Recoding"><a href="#Merge-MultiIndex-Pivot-Recoding" class="headerlink" title="Merge, MultiIndex, Pivot, Recoding"></a>Merge, MultiIndex, Pivot, Recoding</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> division</div><div class="line"></div><div class="line"><span class="keyword">from</span> numpy.random <span class="keyword">import</span> randn</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series, DataFrame</div><div class="line"><span class="keyword">import</span> pandas</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div></pre></td></tr></table></figure>
@@ -419,7 +231,7 @@
 <p><img src="s1e15.png" alt=""></p>
 <p><strong>left_on</strong> and <strong>right_index</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Trick: Merge on pairing hierarchical index and column name</span></div><div class="line">pd.merge(lefth, righth, left_on=[<span class="string">'States'</span>, <span class="string">'Years'</span>], right_index=<span class="keyword">True</span>, how=<span class="string">'outer'</span>)</div></pre></td></tr></table></figure></p>
 <p><img src="s1e16.png" alt=""></p>
-<h6 id="Bt-row-indexes-of-both-frames"><a href="#Bt-row-indexes-of-both-frames" class="headerlink" title="Bt row indexes of both frames"></a>Bt row indexes of both frames</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">left2 = DataFrame([[<span class="number">1.</span>, <span class="number">2.</span>], [<span class="number">3.</span>, <span class="number">4.</span>], [<span class="number">5.</span>, <span class="number">6.</span>]], index=[<span class="string">'1998'</span>, <span class="string">'1999'</span>, <span class="string">'2002'</span>],</div><div class="line">                 columns=[<span class="string">'Ohio'</span>, <span class="string">'Nevada'</span>])</div><div class="line">right2 = DataFrame([[<span class="number">7.</span>, <span class="number">8.</span>], [<span class="number">9.</span>, <span class="number">10.</span>], [<span class="number">11.</span>, <span class="number">12.</span>], [<span class="number">13</span>, <span class="number">14</span>]],</div><div class="line">                 index=[<span class="string">'1999'</span>, <span class="string">'2000'</span>, <span class="string">'2001'</span>, <span class="string">'2002'</span>], columns=[<span class="string">'Missouri'</span>, <span class="string">'Alabama'</span>])</div><div class="line"></div><div class="line">pd.merge(left2, right2, left_index=<span class="keyword">True</span>, right_index=<span class="keyword">True</span>, how=<span class="string">'inner'</span>)</div></pre></td></tr></table></figure>
+<h6 id="By-row-indexes-of-both-frames"><a href="#By-row-indexes-of-both-frames" class="headerlink" title="By row indexes of both frames"></a>By row indexes of both frames</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">left2 = DataFrame([[<span class="number">1.</span>, <span class="number">2.</span>], [<span class="number">3.</span>, <span class="number">4.</span>], [<span class="number">5.</span>, <span class="number">6.</span>]], index=[<span class="string">'1998'</span>, <span class="string">'1999'</span>, <span class="string">'2002'</span>],</div><div class="line">                 columns=[<span class="string">'Ohio'</span>, <span class="string">'Nevada'</span>])</div><div class="line">right2 = DataFrame([[<span class="number">7.</span>, <span class="number">8.</span>], [<span class="number">9.</span>, <span class="number">10.</span>], [<span class="number">11.</span>, <span class="number">12.</span>], [<span class="number">13</span>, <span class="number">14</span>]],</div><div class="line">                 index=[<span class="string">'1999'</span>, <span class="string">'2000'</span>, <span class="string">'2001'</span>, <span class="string">'2002'</span>], columns=[<span class="string">'Missouri'</span>, <span class="string">'Alabama'</span>])</div><div class="line"></div><div class="line">pd.merge(left2, right2, left_index=<span class="keyword">True</span>, right_index=<span class="keyword">True</span>, how=<span class="string">'inner'</span>)</div></pre></td></tr></table></figure>
 <p><img src="s1e17.png" alt=""></p>
 <h5 id="Missing-Values"><a href="#Missing-Values" class="headerlink" title="Missing Values"></a>Missing Values</h5><h6 id="np-where-amp-pd-isnull"><a href="#np-where-amp-pd-isnull" class="headerlink" title="np.where &amp; pd.isnull"></a>np.where &amp; pd.isnull</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Dataset III</span></div><div class="line">a = Series([np.nan, <span class="number">2.5</span>, np.nan, <span class="number">3.5</span>, <span class="number">4.5</span>, np.nan],</div><div class="line">           index=[<span class="string">'f'</span>, <span class="string">'e'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>])</div><div class="line">b = Series(np.arange(len(a), dtype=np.float64),</div><div class="line">           index=[<span class="string">'f'</span>, <span class="string">'e'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>])</div><div class="line">b[<span class="number">-1</span>] = np.nan</div><div class="line">a</div><div class="line">b</div></pre></td></tr></table></figure>
 <p><img src="s1e22.png" alt=""></p>
@@ -492,376 +304,171 @@
 
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/note/tags/python/" rel="tag"># python</a>
-          
-        </div>
-      
-
+    <footer class="entry-meta entry-footer">
       
       
-      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/note/tags/python/">python</a></li></ul>
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/note/2017/10/01/groupby/" rel="next" title="Python Data Grouping">
-                <i class="fa fa-chevron-left"></i> Python Data Grouping
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/note/2017/10/23/Central-Bank/" rel="prev" title="Central Bank">
-                Central Bank <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
       
     </footer>
+    <hr class="entry-footer-hr">
   </div>
   
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
     
-  </div>
-
-
-        </div>
-        
-          
+<nav id="article-nav">
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
+    <a href="/note/2017/10/23/Central-Bank/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Central Bank
+        
+      </div>
+    </a>
+  
+  
+    <a href="/note/2017/10/01/groupby/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python Data Grouping</div>
+    </a>
+  
+</nav>
 
-  <aside id="sidebar" class="sidebar">
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
     
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          
-            <p class="site-author-name" itemprop="name">n0body</p>
-            <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/note/archives/">
-            
-                <span class="site-state-item-count">8</span>
-                <span class="site-state-item-name">posts</span>
-              </a>
-            </div>
-          
-
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/note/tags/index.html">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">tags</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Merge-MultiIndex-Pivot-Recoding"><span class="nav-text">Merge, MultiIndex, Pivot, Recoding</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Merge"><span class="nav-text">Merge</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Join-dataframes-along-rows"><span class="nav-text">Join dataframes along rows</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Join-dataframes-along-columns"><span class="nav-text">Join dataframes along columns</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Join-series-into-data-frame"><span class="nav-text">Join series into data frame</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#By-values-of-a-column"><span class="nav-text">By values of a column</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Merge-with-key-named-differently-across-data-frames"><span class="nav-text">Merge with key named differently across data frames</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Merge-with-outer-join"><span class="nav-text">Merge with outer join</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Merge-with-inner-join"><span class="nav-text">Merge with inner join</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Based-on-the-right-hand-side"><span class="nav-text">Based on the right hand side</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Suffix-to-duplicate-columns"><span class="nav-text">Suffix to duplicate columns</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Merge-based-on-indexes"><span class="nav-text">Merge based on indexes</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Merge-with-multiple-keys"><span class="nav-text">Merge with multiple keys</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#By-pairing-index-and-data"><span class="nav-text">By pairing index and data</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#By-pairing-row-index-and-column"><span class="nav-text">By pairing row index and column</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Bt-row-indexes-of-both-frames"><span class="nav-text">Bt row indexes of both frames</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Missing-Values"><span class="nav-text">Missing Values</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#np-where-amp-pd-isnull"><span class="nav-text">np.where & pd.isnull</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Partial-replacement"><span class="nav-text">Partial replacement</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Stack-vs-unstack"><span class="nav-text">Stack vs. unstack</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Reshaping-with-hierarchical-indexing"><span class="nav-text">Reshaping with hierarchical indexing</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Merge-with-hierarchical-indexing"><span class="nav-text">Merge with hierarchical indexing</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#When-unstacking-in-a-DataFrame-the-level-unstacked-becomes-the-lowest-level-in-the-result"><span class="nav-text">When unstacking in a DataFrame, the level unstacked becomes the lowest level in the result:</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Pivoting"><span class="nav-text">Pivoting</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Conversion-between-long-and-wide-formats"><span class="nav-text">Conversion between long and wide formats</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Duplicates"><span class="nav-text">Duplicates</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Removing-duplicates"><span class="nav-text">Removing duplicates</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Categorizing"><span class="nav-text">Categorizing</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Data-mapping"><span class="nav-text">Data mapping</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Conversion-of-categorical-data"><span class="nav-text">Conversion of categorical data</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
+      <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Merge-MultiIndex-Pivot-Recoding"><span class="nav-text">Merge, MultiIndex, Pivot, Recoding</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Merge"><span class="nav-text">Merge</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Join-dataframes-along-rows"><span class="nav-text">Join dataframes along rows</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Join-dataframes-along-columns"><span class="nav-text">Join dataframes along columns</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Join-series-into-data-frame"><span class="nav-text">Join series into data frame</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#By-values-of-a-column"><span class="nav-text">By values of a column</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Merge-with-key-named-differently-across-data-frames"><span class="nav-text">Merge with key named differently across data frames</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Merge-with-outer-join"><span class="nav-text">Merge with outer join</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Merge-with-inner-join"><span class="nav-text">Merge with inner join</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Based-on-the-right-hand-side"><span class="nav-text">Based on the right hand side</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Suffix-to-duplicate-columns"><span class="nav-text">Suffix to duplicate columns</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Merge-based-on-indexes"><span class="nav-text">Merge based on indexes</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Merge-with-multiple-keys"><span class="nav-text">Merge with multiple keys</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#By-pairing-index-and-data"><span class="nav-text">By pairing index and data</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#By-pairing-row-index-and-column"><span class="nav-text">By pairing row index and column</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#By-row-indexes-of-both-frames"><span class="nav-text">By row indexes of both frames</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Missing-Values"><span class="nav-text">Missing Values</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#np-where-amp-pd-isnull"><span class="nav-text">np.where & pd.isnull</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Partial-replacement"><span class="nav-text">Partial replacement</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Stack-vs-unstack"><span class="nav-text">Stack vs. unstack</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Reshaping-with-hierarchical-indexing"><span class="nav-text">Reshaping with hierarchical indexing</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Merge-with-hierarchical-indexing"><span class="nav-text">Merge with hierarchical indexing</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#When-unstacking-in-a-DataFrame-the-level-unstacked-becomes-the-lowest-level-in-the-result"><span class="nav-text">When unstacking in a DataFrame, the level unstacked becomes the lowest level in the result:</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Pivoting"><span class="nav-text">Pivoting</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Conversion-between-long-and-wide-formats"><span class="nav-text">Conversion between long and wide formats</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Duplicates"><span class="nav-text">Duplicates</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Removing-duplicates"><span class="nav-text">Removing duplicates</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Categorizing"><span class="nav-text">Categorizing</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Data-mapping"><span class="nav-text">Data mapping</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Conversion-of-categorical-data"><span class="nav-text">Conversion of categorical data</span></a></li></ol></li></ol></li></ol>
+    
     </div>
   </aside>
-
-
+</section>
         
       </div>
-    </main>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
+    </div>
+    <!-- <nav id="mobile-nav">
   
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">n0body</span>
+    <a href="/note/" class="mobile-nav-link">Home</a>
+  
+    <a href="/note/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/note/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/note/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/note/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
 
-  
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2018 Data Science All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
 </div>
 
+<!-- mathjax config similar to math.stackexchange -->
 
-  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
 
-  <span class="post-meta-divider">|</span>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.2</div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
 
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
 
+  <link rel="stylesheet" href="/note/fancybox/jquery.fancybox.css">
+  <script src="/note/fancybox/jquery.fancybox.pack.js"></script>
 
 
+<script src="/note/js/script.js"></script>
+<script src="/note/js/bootstrap.js"></script>
+<script src="/note/js/main.js"></script>
 
 
 
 
 
-  
 
 
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
 
 
 
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
 
 
 
 
 
 
+  </div>
 
-  
-  <script type="text/javascript" src="/note/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/note/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/note/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/note/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/note/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/note/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/note/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/note/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/note/js/src/affix.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/note/js/src/schemes/pisces.js?v=5.1.2"></script>
-
-
-
-  <script type="text/javascript" src="/note/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/note/js/src/post-details.js?v=5.1.2"></script>
-
-
-  
-  <script type="text/javascript" src="/note/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/note/js/src/post-details.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/note/js/src/bootstrap.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>
@@ -879,12 +486,5 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
-  
-
-
-  
-
-  
-
 </body>
 </html>

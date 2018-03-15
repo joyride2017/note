@@ -1,106 +1,22 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="en">
+<html>
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
+  <title>Python Basics: Numpy &amp; Pandas | Data Science</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <link href="/note/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
+  <meta name="keywords" content="python" />
   
   
   
   
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/note/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/note/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="python," />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/note/favicon.ico?v=5.1.2" />
-
-
-
-
-
-
-<meta name="description" content="Numpy, Pandas">
+  <meta name="description" content="Numpy, Pandas">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Basics: Numpy &amp; Pandas">
 <meta property="og:url" content="https://joyride2017.github.io/note/2017/09/08/python-basics/index.html">
-<meta property="og:site_name" content="Local Playground">
+<meta property="og:site_name" content="Data Science">
 <meta property="og:description" content="Numpy, Pandas">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://joyride2017.github.io/note/2017/09/08/python-basics/p-basic-40.png">
@@ -190,223 +106,119 @@
 <meta property="og:image" content="https://joyride2017.github.io/note/2017/09/08/python-basics/p-basic-68.png">
 <meta property="og:image" content="https://stackoverflow.com/questions/38981257/color-3d-surface-based-on-categories-that-passes-through-scatter-points">
 <meta property="og:image" content="https://joyride2017.github.io/note/2017/09/08/python-basics/p-basic-102.png">
-<meta property="og:updated_time" content="2017-11-26T01:47:00.068Z">
+<meta property="og:updated_time" content="2017-11-29T16:07:34.891Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Basics: Numpy &amp; Pandas">
 <meta name="twitter:description" content="Numpy, Pandas">
 <meta name="twitter:image" content="https://joyride2017.github.io/note/2017/09/08/python-basics/p-basic-40.png">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/note/',
-    scheme: 'Gemini',
-    version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="https://joyride2017.github.io/note/2017/09/08/python-basics/"/>
-
-
-
-
-
-  <title>Python Basics: Numpy & Pandas | Local Playground</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
+  <link rel="icon" href="/note/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
 
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/note/css/style.css">
 
+  <script src="/note/js/jquery-3.1.1.min.js"></script>
 
-
-
-
-
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/note/css/bootstrap.css" >
+  <link rel="stylesheet" href="/note/css/fashion.css" >
+  <link rel="stylesheet" href="/note/css/glyphs.css" ><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
 
   
-  
-    
-  
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
 
-    <div class="custom-logo-site-title">
-      <a href="/note/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Local Playground</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
+          <h1 class="site-title">
+            
+              <a href="/note/" title="Data Science" rel="home"> Data Science </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/note/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/note/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/note/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/note/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/note/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
   </div>
+</header>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
         
-        <li class="menu-item menu-item-home">
-          <a href="/note/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/note/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
+          <section id="main" style="float:none;"><article id="post-python-basics" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://joyride2017.github.io/note/note/2017/09/08/python-basics/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="n0body">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/note/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Local Playground">
-    </span>
-
     
-      <header class="post-header">
-
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">Python Basics: Numpy & Pandas</h1>
-        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Python Basics: Numpy &amp; Pandas
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-08T16:13:22-05:00">
-                2017-09-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-              <div class="post-description">
-                  Numpy, Pandas
-              </div>
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-meta">
       
-      
+	<a href="/note/2017/09/08/python-basics/" class="article-date">
+	  <time datetime="2017-09-08T21:13:22.000Z" itemprop="datePublished">September 8, 2017</time>
+	</a>
 
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  VIEWS<span id="busuanzi_value_page_pv"></span> TIMES
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
       
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><span>$$\alpha \beta \gamma$$</span><!-- Has MathJax -->
 <h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h2 id="Library"><a href="#Library" class="headerlink" title="Library"></a>Library</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> division</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="comment"># -- matplotlib (1)</span></div><div class="line"><span class="keyword">import</span> matplotlib</div><div class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="comment"># import matplotlib.pyplot as plt #! also works</span></div><div class="line"><span class="comment"># -- pandas (2)</span></div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series, DataFrame</div><div class="line"><span class="comment"># -- numpy (3)</span></div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> linspace, sin</div><div class="line"><span class="keyword">from</span> numpy.random <span class="keyword">import</span> randn</div><div class="line"><span class="keyword">import</span> random</div><div class="line"><span class="keyword">from</span> random <span class="keyword">import</span> choices</div><div class="line">np.random.seed(<span class="number">12321</span>)</div><div class="line"><span class="comment"># np.set_printoptions(precision=4) #</span></div><div class="line"><span class="comment"># -- Jupyter</span></div><div class="line"><span class="comment"># plt.rc('figure', figsize=(10, 6)) # used in Jupyter</span></div></pre></td></tr></table></figure>
@@ -644,6 +456,7 @@
 <p>A Series’s index can be altered in place by assignment:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">obj = Series([<span class="number">4</span>, <span class="number">7</span>, <span class="number">-5</span>, <span class="number">3</span>])</div><div class="line">obj.index = [<span class="string">'Bob'</span>, <span class="string">'Steve'</span>, <span class="string">'Jeff'</span>, <span class="string">'Ryan'</span>]</div><div class="line">obj</div></pre></td></tr></table></figure></p>
 <h5 id="element-wise-operations"><a href="#element-wise-operations" class="headerlink" title="element-wise operations"></a>element-wise operations</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## reindex method, xs method, icol, irow methods, get_value and set_value method</span></div><div class="line"><span class="comment"># Arithmetic, data alignment, value filling</span></div><div class="line"></div><div class="line">s1 = Series([<span class="number">7.3</span>, <span class="number">-2.5</span>, <span class="number">3.4</span>, <span class="number">1.5</span>], index=[<span class="string">'a'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>])</div><div class="line">s2 = Series([<span class="number">-2.1</span>, <span class="number">3.6</span>, <span class="number">-1.5</span>, <span class="number">4</span>, <span class="number">3.1</span>], index=[<span class="string">'a'</span>, <span class="string">'c'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>])</div><div class="line">s1</div><div class="line">s2</div><div class="line"><span class="comment"># The internal data alignment introduces NA values in the indices that don’t overlap.</span></div><div class="line">s1 + s2</div></pre></td></tr></table></figure>
 <h4 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h4><p>The DataFrame has both a row and column index; it can be thought of as a dict of Series, each of which can be a different value type (numeric, string, boolean, etc.). The resulting DataFrame will have its index assigned automatically as with Series, and the columns are placed in sorted order.</p>
+<h5 id="Read-index-column-from-csv"><a href="#Read-index-column-from-csv" class="headerlink" title="Read index column from csv"></a>Read index column from csv</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df = pd.read_csv(<span class="string">'share_net_worth_rich2poor.csv'</span>, index_col=<span class="number">0</span> ) <span class="comment"># column 1 refers to the first column, so 0 refers to the location of index.</span></div></pre></td></tr></table></figure>
 <h5 id="Convert-DataFrame-to-Narray-preserving-index"><a href="#Convert-DataFrame-to-Narray-preserving-index" class="headerlink" title="Convert DataFrame to Narray preserving index"></a>Convert DataFrame to Narray preserving index</h5><p>Reference <a href="https://stackoverflow.com/questions/13187778/convert-pandas-dataframe-to-numpy-array-preserving-index" target="_blank" rel="external">stackoverflow</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># data</span></div><div class="line">data = &#123;<span class="string">'state'</span>: [<span class="string">'Ohio'</span>, <span class="string">'Ohio'</span>, <span class="string">'Ohio'</span>, <span class="string">'Nevada'</span>, <span class="string">'Nevada'</span>], <span class="string">'year'</span>: [<span class="number">2000</span>, <span class="number">2001</span>, <span class="number">2002</span>, <span class="number">2001</span>, <span class="number">2002</span>], <span class="string">'pop'</span>: [<span class="number">1.5</span>, <span class="number">1.7</span>, <span class="number">3.6</span>, <span class="number">2.4</span>, <span class="number">2.9</span>]&#125;</div><div class="line">frame = DataFrame(data)</div><div class="line">frame</div><div class="line"><span class="comment"># rearrange the order of columns</span></div><div class="line">DataFrame(data, columns=[<span class="string">'year'</span>, <span class="string">'state'</span>, <span class="string">'pop'</span>])</div></pre></td></tr></table></figure>
 <p><img src="p-basic-48.png" alt=""></p>
@@ -798,13 +611,17 @@
 <p><img src="p-basic-65.png" alt=""></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Second #</span></div><div class="line"></div><div class="line">x1 = np.random.rand(<span class="number">10</span>)</div><div class="line">x2 = np.random.rand(<span class="number">10</span>)</div><div class="line">x3 = np.random.rand(<span class="number">10</span>)</div><div class="line">x4 = np.random.rand(<span class="number">10</span>)</div><div class="line">y1 = np.random.rand(<span class="number">10</span>)</div><div class="line">y2 = np.random.rand(<span class="number">10</span>)</div><div class="line">y3 = np.random.rand(<span class="number">10</span>)</div><div class="line">y4 = np.random.rand(<span class="number">10</span>)</div><div class="line"></div><div class="line">figure2, ((ax1, ax2), (ax3, ax4)) = plt.subplots(<span class="number">2</span>, <span class="number">2</span>)</div><div class="line">ax1.plot(x1,y1)</div><div class="line">ax2.plot(x2,y2)</div><div class="line">ax3.plot(x3,y3)</div><div class="line">ax4.plot(x4,y4)</div><div class="line"></div><div class="line">plt.show()</div></pre></td></tr></table></figure>
 <p><img src="p-basic-73.png" alt=""></p>
-<p><strong>Change tick frequency and starting point of axis range</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> matplotlib</div><div class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> matplotlib.ticker <span class="keyword">as</span> ticker</div><div class="line"></div><div class="line"><span class="comment"># data</span></div><div class="line">x = [<span class="number">0</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">15</span>]</div><div class="line">y = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</div><div class="line">n= [<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>,<span class="string">'D'</span>,<span class="string">'E'</span>]</div><div class="line">z = np.linspace(<span class="number">0</span>, <span class="number">20</span>, <span class="number">1000</span>)</div><div class="line">y1 = np.sin(z)<span class="number">-1.5</span></div><div class="line">y2 = np.cos(z)<span class="number">-1.5</span></div><div class="line"></div><div class="line"><span class="comment"># plot zone starts here</span></div><div class="line">fig, ax = plt.subplots()</div><div class="line">ax.scatter(x,y)</div><div class="line">line1, = ax.plot(z, y1, <span class="string">'--b'</span>, label=<span class="string">'sine'</span>)</div><div class="line">line2, = ax.plot(z, y2, <span class="string">'-r'</span>, label=<span class="string">'cosine'</span>)</div><div class="line">dashes = [<span class="number">1</span>,<span class="number">5</span>,<span class="number">30</span>,<span class="number">5</span>] <span class="comment"># the lengths of each segment in the pattern. 1 denotes a point.</span></div><div class="line">line1.set_dashes(dashes)</div><div class="line"><span class="comment"># set up axis range before tick frequency</span></div><div class="line">cur_xlim = ax.get_xlim()</div><div class="line">ax.set_xlim([<span class="number">-2</span>,cur_xlim[<span class="number">1</span>]]) <span class="comment"># set the start and end points of x axis.</span></div><div class="line"><span class="comment"># set up tick frequency</span></div><div class="line">start, end = ax.get_xlim()</div><div class="line">ax.xaxis.set_ticks(np.arange(start, end, <span class="number">4</span>))</div><div class="line">ax.xaxis.set_major_formatter(ticker.FormatStrFormatter(<span class="string">'%0.1fM'</span>)) <span class="comment"># with percent sign following integer, %i%%; integer with k to denote thousands, using '%ik' If want to add dollar sign, in this case, type '\$%ik' for something like '$10k' or '\$%2.1fM' for something like '$2.1M'.</span></div><div class="line"></div><div class="line"><span class="comment"># annotation</span></div><div class="line"><span class="keyword">for</span> i, txt <span class="keyword">in</span> enumerate(n):</div><div class="line">    ax.annotate(txt,(x[i]+<span class="number">0.1</span>,y[i]))</div><div class="line"></div><div class="line"><span class="comment"># legend</span></div><div class="line">handles, labels = ax.get_legend_handles_labels()</div><div class="line">ax.legend(handles[::<span class="number">-1</span>], labels[::<span class="number">-1</span>]) <span class="comment"># reverse the order</span></div><div class="line">ax.legend(loc=<span class="string">'upper left'</span>)</div><div class="line">fig.suptitle(<span class="string">r'$\alpha$ upper title is over here'</span>,fontsize=<span class="number">10</span>)</div><div class="line">ax.set_title(<span class="string">'subtitle'</span>,fontsize=<span class="number">9</span>)</div><div class="line"></div><div class="line"><span class="comment"># tweak spacing to prevent clipping of set_ylabel</span></div><div class="line">plt.subplots_adjust(left=<span class="number">0.15</span>)</div><div class="line"></div><div class="line"><span class="comment"># relabel</span></div><div class="line">xticklabels = ax.get_xticks().tolist()</div><div class="line">xticklabels[<span class="number">1</span>] = <span class="string">'dog'</span></div><div class="line">ax.set_xticklabels(xticklabels)</div><div class="line"></div><div class="line"><span class="comment"># ticks, grid and background color Subsetting</span></div><div class="line">major_ticks = np.arange(<span class="number">-2</span>, <span class="number">21</span>, <span class="number">4</span>)</div><div class="line">minor_ticks = np.arange(<span class="number">-2</span>, <span class="number">21</span>, <span class="number">2</span>)</div><div class="line">ax.set_xticks(major_ticks)</div><div class="line">ax.set_xticks(minor_ticks, minor=<span class="keyword">True</span>)</div><div class="line">ax.grid(which=<span class="string">'minor'</span>, alpha=<span class="number">0.2</span>)</div><div class="line">ax.grid(which=<span class="string">'major'</span>, alpha=<span class="number">0.5</span>)</div><div class="line">plt.rcParams[<span class="string">'axes.facecolor'</span>] = <span class="string">'white'</span></div><div class="line">plt.rcParams[<span class="string">'axes.edgecolor'</span>] = <span class="string">'black'</span></div><div class="line">plt.rcParams[<span class="string">'grid.alpha'</span>] = <span class="number">1</span></div><div class="line">plt.rcParams[<span class="string">'grid.color'</span>] = <span class="string">"#cccccc"</span></div><div class="line"></div><div class="line">plt.text(<span class="number">-2</span>,<span class="number">-4</span>,<span class="string">'text message over here!'</span>)</div><div class="line"></div><div class="line">plt.grid(<span class="keyword">True</span>)</div><div class="line"></div><div class="line"><span class="comment"># save with transparent background and customary dpi</span></div><div class="line">plt.savefig(<span class="string">'test.png'</span>, dpi=<span class="number">150</span>, transparent=<span class="keyword">True</span>)</div><div class="line">plt.show()</div></pre></td></tr></table></figure></p>
+<p><strong>Change tick frequency and starting point of axis range</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> matplotlib</div><div class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> matplotlib.ticker <span class="keyword">as</span> ticker</div><div class="line"><span class="keyword">from</span> matplotlib.ticker <span class="keyword">import</span> AutoMinorLocator <span class="comment"># automatically set minor ticks based on the major ticks.</span></div><div class="line"></div><div class="line"><span class="comment"># data</span></div><div class="line">x = [<span class="number">0</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">15</span>]</div><div class="line">y = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</div><div class="line">n= [<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>,<span class="string">'D'</span>,<span class="string">'E'</span>]</div><div class="line">z = np.linspace(<span class="number">0</span>, <span class="number">20</span>, <span class="number">1000</span>)</div><div class="line">y1 = np.sin(z)<span class="number">-1.5</span></div><div class="line">y2 = np.cos(z)<span class="number">-1.5</span></div><div class="line"></div><div class="line"><span class="comment"># plot zone starts here</span></div><div class="line">fig, ax = plt.subplots()</div><div class="line"></div><div class="line"><span class="comment"># move subplots' bottom upward (or downward) and adjust the space between subplots_adjust</span></div><div class="line"><span class="comment"># fig.subplots_adjust(bottom=0.07, hspace=0.3)</span></div><div class="line"></div><div class="line">ax.scatter(x,y)</div><div class="line">line1, = ax.plot(z, y1, <span class="string">'--b'</span>, label=<span class="string">'sine'</span>)</div><div class="line">line2, = ax.plot(z, y2, <span class="string">'-r'</span>, label=<span class="string">'cosine'</span>)</div><div class="line">dashes = [<span class="number">1</span>,<span class="number">5</span>,<span class="number">30</span>,<span class="number">5</span>] <span class="comment"># the lengths of each segment in the pattern. 1 denotes a point.</span></div><div class="line">line1.set_dashes(dashes)</div><div class="line"><span class="comment"># set up axis range before tick frequency</span></div><div class="line">cur_xlim = ax.get_xlim()</div><div class="line">ax.set_xlim([<span class="number">-2</span>,cur_xlim[<span class="number">1</span>]]) <span class="comment"># set the start and end points of x axis.</span></div><div class="line"></div><div class="line"><span class="comment"># set up tick frequency or Even customary position.</span></div><div class="line">start, end = ax.get_xlim()</div><div class="line">ax.xaxis.set_ticks(np.arange(start, end, <span class="number">4</span>))</div><div class="line">ax.xaxis.set_major_formatter(ticker.FormatStrFormatter(<span class="string">'%0.1fM'</span>)) <span class="comment"># with percent sign following integer, %i%%; integer with k to denote thousands, using '%ik' If want to add dollar sign, in this case, type '\$%ik' for something like '$10k' or '\$%2.1fM' for something like '$2.1M'.</span></div><div class="line"></div><div class="line"><span class="comment"># relabel</span></div><div class="line">xticklabels = ax.get_xticks().tolist()</div><div class="line">xticklabels[<span class="number">1</span>] = <span class="string">'dog'</span></div><div class="line">ax.set_xticklabels(xticklabels)</div><div class="line"></div><div class="line"><span class="comment"># reference: https://stackoverflow.com/questions/28810403/how-can-i-set-the-location-of-minor-ticks-in-matplotlib</span></div><div class="line"><span class="comment"># automatically set minor ticks based on the major ticks.</span></div><div class="line">minor_locator = AutoMinorLocator(<span class="number">2</span>)</div><div class="line">ax.yaxis.set_minor_locator(minor_locator)</div><div class="line">plt.grid(which=<span class="string">'minor'</span>)</div><div class="line"></div><div class="line"><span class="comment"># center line-broken axis label</span></div><div class="line"><span class="comment"># reference: https://stackoverflow.com/questions/10144962/centering-line-broken-axis-label-in-matplotlib</span></div><div class="line"><span class="comment"># ylabel('Soil Moisture Sensitivity,\n(0.01 K m$^3$ m$^&#123;-3&#125;$)', multialignment='center')</span></div><div class="line"></div><div class="line"><span class="comment"># advanced annotation</span></div><div class="line"><span class="comment"># reference: https://matplotlib.org/users/annotations_intro.html</span></div><div class="line"></div><div class="line"><span class="comment"># Task 2. change label and its decompositions</span></div><div class="line"><span class="comment"># Example:</span></div><div class="line"><span class="comment"># ax.xaxis.set_ticks([1,20,40,60,80,99])</span></div><div class="line"><span class="comment"># xticklabels = ax.get_xticks().tolist()</span></div><div class="line"><span class="comment"># xticklabels = ['99%','80%','60%','40%','20%','1%']</span></div><div class="line"><span class="comment"># ax.set_xticklabels(xticklabels)</span></div><div class="line"></div><div class="line"><span class="comment"># add horizontal line1</span></div><div class="line"><span class="comment"># ax.axhline(y=40,xmin=0,xmax=3,linestyle="--",c="black",linewidth=0.5,zorder=0) # it's OK to set xmin and xmax outside the figure's xaxis range.</span></div><div class="line"></div><div class="line"><span class="comment"># annotation</span></div><div class="line"><span class="keyword">for</span> i, txt <span class="keyword">in</span> enumerate(n):</div><div class="line">    ax.annotate(txt,(x[i]+<span class="number">0.1</span>,y[i]))</div><div class="line"></div><div class="line"><span class="comment"># legend</span></div><div class="line">handles, labels = ax.get_legend_handles_labels()</div><div class="line">ax.legend(handles[::<span class="number">-1</span>], labels[::<span class="number">-1</span>]) <span class="comment"># reverse the order</span></div><div class="line">ax.legend(loc=<span class="string">'upper left'</span>,bbox_to_anchor=[<span class="number">0</span>, <span class="number">1</span>],</div><div class="line">           ncol=<span class="number">2</span>, shadow=<span class="keyword">True</span>, title=<span class="string">"Legend"</span>, fancybox=<span class="keyword">True</span>)</div><div class="line">fig.suptitle(<span class="string">r'$\alpha$ upper title is over here'</span>,fontsize=<span class="number">10</span>)</div><div class="line">ax.set_title(<span class="string">'subtitle'</span>,fontsize=<span class="number">9</span>)</div><div class="line"></div><div class="line"><span class="comment"># tweak spacing to prevent clipping of set_ylabel</span></div><div class="line">plt.subplots_adjust(left=<span class="number">0.15</span>)</div><div class="line"></div><div class="line">ax.set_xlabel(<span class="string">'xlabel'</span>)</div><div class="line">ax.set_ylabel(<span class="string">'ylabel'</span>)</div><div class="line">ax.xaxis.label.set_size(<span class="number">12</span>)</div><div class="line">ax.yaxis.label.set_size(<span class="number">12</span>)</div><div class="line"></div><div class="line"><span class="comment"># ticks, grid and background color Subsetting</span></div><div class="line">major_ticks = np.arange(<span class="number">-2</span>, <span class="number">21</span>, <span class="number">4</span>)</div><div class="line">minor_ticks = np.arange(<span class="number">-2</span>, <span class="number">21</span>, <span class="number">2</span>)</div><div class="line">ax.set_xticks(major_ticks)</div><div class="line">ax.set_xticks(minor_ticks, minor=<span class="keyword">True</span>)</div><div class="line">ax.grid(which=<span class="string">'minor'</span>, alpha=<span class="number">0.2</span>)</div><div class="line">ax.grid(which=<span class="string">'major'</span>, alpha=<span class="number">0.5</span>)</div><div class="line">plt.rcParams[<span class="string">'axes.facecolor'</span>] = <span class="string">'white'</span></div><div class="line">plt.rcParams[<span class="string">'axes.edgecolor'</span>] = <span class="string">'black'</span></div><div class="line">plt.rcParams[<span class="string">'grid.alpha'</span>] = <span class="number">1</span></div><div class="line">plt.rcParams[<span class="string">'grid.color'</span>] = <span class="string">"#cccccc"</span></div><div class="line"></div><div class="line">plt.text(<span class="number">-2</span>,<span class="number">-4</span>,<span class="string">'text message over here!'</span>)</div><div class="line">plt.gcf().text(<span class="number">0.15</span>, <span class="number">-0.1</span>, <span class="string">'gcf text over here!'</span>)</div><div class="line"></div><div class="line">plt.grid(<span class="keyword">True</span>)</div><div class="line"></div><div class="line"><span class="comment"># save with transparent background and customary dpi</span></div><div class="line">plt.savefig(<span class="string">'test.png'</span>, dpi=<span class="number">150</span>, transparent=<span class="keyword">True</span>)</div><div class="line"><span class="comment"># save as svg</span></div><div class="line"><span class="comment"># plt.savefig("test.svg", format="svg")</span></div><div class="line">plt.show()</div></pre></td></tr></table></figure></p>
 <p><img src="p-basic-67.png" alt=""></p>
 <p><strong>Coloring objects with loop</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">x = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line">y = [ [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>], [<span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>] ]</div><div class="line">labels=[<span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span>]</div><div class="line">colors=[<span class="string">'r'</span>,<span class="string">'g'</span>,<span class="string">'b'</span>]</div><div class="line"></div><div class="line"><span class="comment"># loop over data, labels and colors</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(y)):</div><div class="line">    plt.plot(x,y[i],<span class="string">'o-'</span>,color=colors[i],label=labels[i])</div><div class="line"></div><div class="line">plt.legend()</div><div class="line">plt.show()</div></pre></td></tr></table></figure></p>
 <p><img src="p-basic-68.png" alt=""></p>
 <p><img src="https://stackoverflow.com/questions/38981257/color-3d-surface-based-on-categories-that-passes-through-scatter-points" alt="Color 3D Surface Based on Categories that passes through scatter points"></p>
+<h4 id="Clustered-stacked-bar-character"><a href="#Clustered-stacked-bar-character" class="headerlink" title="Clustered, stacked bar character"></a>Clustered, stacked bar character</h4><p><a href="https://stackoverflow.com/questions/22787209/how-to-have-clusters-of-stacked-bars-with-python-pandas#answer-35060572" target="_blank" rel="external">stackoverflow #1</a><br><a href="https://stackoverflow.com/questions/40121562/clustered-stacked-bar-in-python-pandas#answer-40121800" target="_blank" rel="external">stackoverflow #2</a></p>
+<h4 id="Broken-axis-plots"><a href="#Broken-axis-plots" class="headerlink" title="Broken axis plots"></a>Broken axis plots</h4><p><a href="https://stackoverflow.com/questions/13027147/histogram-with-breaking-axis-and-interlaced-colorbar" target="_blank" rel="external">broken axis with two subplots</a><br><a href="https://stackoverflow.com/questions/44731152/matplotlib-create-broken-axis-in-subplot" target="_blank" rel="external">broken axis with an single subplot</a></p>
+<h4 id="plt-subplots-vs-fig-subplots-adjust"><a href="#plt-subplots-vs-fig-subplots-adjust" class="headerlink" title="plt.subplots vs fig.subplots_adjust"></a>plt.subplots vs fig.subplots_adjust</h4><p><a href="https://stackoverflow.com/questions/31726643/how-do-i-get-multiple-subplots-in-matplotlib#answer-31727125" target="_blank" rel="external">stackoverflow</a></p>
 <h4 id="XKCD-plot"><a href="#XKCD-plot" class="headerlink" title="XKCD plot"></a>XKCD plot</h4><p>Reference <a href="https://jakevdp.github.io/blog/2013/07/10/XKCD-plots-in-matplotlib/" target="_blank" rel="external">Pythonic Perambulations</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">plt.xkcd()  <span class="comment"># Yes...</span></div><div class="line">plt.plot(sin(linspace(<span class="number">0</span>, <span class="number">10</span>)))</div><div class="line">plt.title(<span class="string">'Whoo Hoo!!!'</span>)</div></pre></td></tr></table></figure></p>
 <p><img src="p-basic-102.png" alt=""></p>
+<h4 id="Plot-“The-Economist”-type-graphs"><a href="#Plot-“The-Economist”-type-graphs" class="headerlink" title="Plot “The Economist”-type graphs"></a>Plot “The Economist”-type graphs</h4><p><a href="https://stackoverflow.com/questions/29859565/create-the-economist-style-graphs-from-python" target="_blank" rel="external">stackoverflow</a></p>
 <h3 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h3><p>‘’’python<br>df1 = DataFrame(np.repeat([1,2,3],3).reshape((3,3)),columns=[‘a’,’b’,’c’])<br>df2 = DataFrame(np.repeat([10,20,30],3).reshape((3,3)),columns=[‘a’,’b’,’c’])<br>def mulfunc(x,factor):<br>    a = x[‘a’]<em>factor<br>    b = x[‘b’]</em>factor<br>    c = x[‘c’]*factor<br>    return a+b+c<br>def objfunc(x):<br>    df1[‘d’] = df1.apply(mulfunc,factor=2.,axis=1)<br>    df2[‘d’] = df2.apply(mulfunc,factor=x,axis=1)<br>    return df1[‘d’].subtract(df2[‘d’]).sum()</p>
 <p>print scipy.optimize.brentq(objfunc, 0.,100.)<br>```</p>
 <h2 id="Python-OOP"><a href="#Python-OOP" class="headerlink" title="Python OOP"></a>Python OOP</h2><p>OOP refers to Object-Oriented Programming.</p>
@@ -819,376 +636,171 @@
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;">Data munging or data wrangling is loosely the process of manually converting or mapping data from one “raw” form into another format that allows for more convenient consumption of the data with the help of semi-automated tools.</span><a href="#fnref:1" rev="footnote"> ↩</a></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">2.</span><span style="display: inline-block; vertical-align: top;">Set symmetric differences: elements that are in either of the arrays, but not both.</span><a href="#fnref:2" rev="footnote"> ↩</a></li></ol></div></div>
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/note/tags/python/" rel="tag"># python</a>
-          
-        </div>
-      
-
+    <footer class="entry-meta entry-footer">
       
       
-      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/note/tags/python/">python</a></li></ul>
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/note/2017/09/08/english-sentence/" rel="next" title="English sentence">
-                <i class="fa fa-chevron-left"></i> English sentence
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/note/2017/10/01/groupby/" rel="prev" title="Python Data Grouping">
-                Python Data Grouping <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
       
     </footer>
+    <hr class="entry-footer-hr">
   </div>
   
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
     
-  </div>
-
-
-        </div>
-        
-          
+<nav id="article-nav">
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
+    <a href="/note/2017/10/01/groupby/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python Data Grouping
+        
+      </div>
+    </a>
+  
+  
+    <a href="/note/2017/09/08/english-sentence/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">English sentence</div>
+    </a>
+  
+</nav>
 
-  <aside id="sidebar" class="sidebar">
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
     
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          
-            <p class="site-author-name" itemprop="name">n0body</p>
-            <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/note/archives/">
-            
-                <span class="site-state-item-count">8</span>
-                <span class="site-state-item-name">posts</span>
-              </a>
-            </div>
-          
-
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/note/tags/index.html">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">tags</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python"><span class="nav-text">Python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Library"><span class="nav-text">Library</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Standard-output"><span class="nav-text">Standard output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Working-directory"><span class="nav-text">Working directory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Change-current-directory"><span class="nav-text">Change current directory</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDE-for-python"><span class="nav-text">IDE for python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spyder"><span class="nav-text">Spyder</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Clear-all-variables-in-Spyder"><span class="nav-text">Clear all variables in Spyder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Autocompletion-amp-search"><span class="nav-text">Autocompletion & search</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jupyter"><span class="nav-text">Jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Execute-code-from-the-clipboard"><span class="nav-text">Execute code from the clipboard</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dos-mode"><span class="nav-text">Dos mode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Timing-the-runtime"><span class="nav-text">Timing the runtime</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-data-structure"><span class="nav-text">Basic data structure</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lists"><span class="nav-text">Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#List-of-floating-point-number"><span class="nav-text">List of floating point number</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Read-list"><span class="nav-text">Read    list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Membership-in-list"><span class="nav-text">Membership in list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Get-the-index-of-a-cell"><span class="nav-text">Get the index of a cell</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Get-the-index-of-matched-item-from-a-list"><span class="nav-text">Get the index of matched item from a list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unpack-list"><span class="nav-text">Unpack list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Concatenation"><span class="nav-text">Concatenation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Combine-list-elements"><span class="nav-text">Combine list elements</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dictionary-of-Lists"><span class="nav-text">Dictionary of Lists</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Index-of-an-list-item"><span class="nav-text">Index of an list item</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unzip-a-list"><span class="nav-text">Unzip a list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Split-into-equal-chunks"><span class="nav-text">Split into equal chunks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Clong-rows-and-columns"><span class="nav-text">Clong rows and columns</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Strings"><span class="nav-text">Strings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tuples"><span class="nav-text">Tuples</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dictionaries"><span class="nav-text">Dictionaries</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basics"><span class="nav-text">Basics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Task-word-counts-in-article"><span class="nav-text">Task: word counts in article</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Task-nested-dictionary"><span class="nav-text">Task: nested dictionary</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Return-multiple-dataframe-using-Dictionary"><span class="nav-text">Return multiple dataframe using Dictionary</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sets"><span class="nav-text">Sets</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basics-1"><span class="nav-text">Basics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Check-membership"><span class="nav-text">Check membership</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Functions"><span class="nav-text">Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#enumerate"><span class="nav-text">enumerate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sorted"><span class="nav-text">sorted</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#zip"><span class="nav-text">zip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unzip"><span class="nav-text">unzip</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flow-control"><span class="nav-text">Flow control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NumPy"><span class="nav-text">NumPy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-ndarray"><span class="nav-text">Create ndarray</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#By-randomization"><span class="nav-text">By randomization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Generate-random-integers-between-0-and-9"><span class="nav-text">Generate random integers between 0 and 9</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#By-functions"><span class="nav-text">By functions</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#array-amp-dtype"><span class="nav-text">array() & dtype</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#nan"><span class="nav-text">nan()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#shape-amp-ndim"><span class="nav-text">shape() & ndim</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#zeros-amp-ones-amp-empty"><span class="nav-text">zeros() & ones() & empty()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#arange-amp-reshape"><span class="nav-text">arange() & reshape()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#view"><span class="nav-text">view()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Type-conversion"><span class="nav-text">Type conversion</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Numpy-matrix-vs-Numpy-array"><span class="nav-text">Numpy matrix vs Numpy array</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dtype"><span class="nav-text">dtype</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#astype"><span class="nav-text">astype()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-to-numeric-string"><span class="nav-text">String to numeric_string</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Factorization"><span class="nav-text">Factorization</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#basic"><span class="nav-text">basic</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#string-vector-creation-amp-frequency"><span class="nav-text">string vector creation & frequency</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Indexing"><span class="nav-text">Indexing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#One-dimension-indexing"><span class="nav-text">One-dimension indexing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Numpy-indexing"><span class="nav-text">Numpy indexing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Numpy-conditional-indexing"><span class="nav-text">Numpy conditional indexing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Indexing-tricks"><span class="nav-text">Indexing tricks</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Re-ordering"><span class="nav-text">Re-ordering</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Select-a-square-region"><span class="nav-text">Select a square region</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Meshgrid-method"><span class="nav-text">Meshgrid method</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#With-equal-number-of-points"><span class="nav-text">With equal number of points</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#With-different-number-of-points-in-x-y-axis"><span class="nav-text">With different number of points in x, y axis</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Task-utility-surface"><span class="nav-text">Task: utility surface</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pairing-lists"><span class="nav-text">Pairing lists</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Boolean-toolkits"><span class="nav-text">Boolean toolkits</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conditional-replacement"><span class="nav-text">Conditional replacement</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Counting-events"><span class="nav-text">Counting events</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sets-1"><span class="nav-text">Sets</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Basic-operations"><span class="nav-text">Basic operations</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Membership"><span class="nav-text">Membership</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Column-grouping-by-types"><span class="nav-text">Column grouping by types</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Numpy-functions"><span class="nav-text">Numpy functions</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Summary-statistics"><span class="nav-text">Summary statistics</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Cumulation"><span class="nav-text">Cumulation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Sorting"><span class="nav-text">Sorting</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Quantiles"><span class="nav-text">Quantiles</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tile-amp-repeat"><span class="nav-text">tile & repeat</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Binary-universal-functions"><span class="nav-text">Binary universal functions</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Transpose-and-swap-axes"><span class="nav-text">Transpose and swap axes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#inverse"><span class="nav-text">inverse</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#transpose-amp-dot"><span class="nav-text">.transpose() & .dot()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#File-input-and-output"><span class="nav-text">File input and output</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#np-save-np-load-np-savez"><span class="nav-text">np.save, np.load, np.savez</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#np-loadtxt"><span class="nav-text">np.loadtxt</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linear-algebra"><span class="nav-text">Linear algebra</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-Binning-data"><span class="nav-text">Case: Binning data</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-counting-occurrence"><span class="nav-text">Case: counting occurrence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-weighted-quantile"><span class="nav-text">Case: weighted quantile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-Random-Walk"><span class="nav-text">Case: Random Walk</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Method-1"><span class="nav-text">Method 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Method-2"><span class="nav-text">Method 2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pandas"><span class="nav-text">Pandas</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Series"><span class="nav-text">Series</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Combine-two-series-into-a-dataframe"><span class="nav-text">Combine two series into a dataframe</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#isnull-amp-notnull"><span class="nav-text">isnull() & notnull()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#indexing"><span class="nav-text">indexing</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#element-wise-operations"><span class="nav-text">element-wise operations</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DataFrame"><span class="nav-text">DataFrame</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Convert-DataFrame-to-Narray-preserving-index"><span class="nav-text">Convert DataFrame to Narray preserving index</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Blank-data-frame"><span class="nav-text">Blank data frame</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Access-sort-values"><span class="nav-text">Access sort_values</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Replacing-values"><span class="nav-text">Replacing values</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Reverse-the-row-order"><span class="nav-text">Reverse the row order</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Get-dummy-variables"><span class="nav-text">Get dummy variables</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Pandas-indexing"><span class="nav-text">Pandas indexing</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#with-Series"><span class="nav-text">with Series</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Rearrange-columns"><span class="nav-text">Rearrange columns</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Keep-slice-columns"><span class="nav-text">Keep/slice columns</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Pandas-conditional-indexing"><span class="nav-text">Pandas conditional indexing</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Rename-columns"><span class="nav-text">Rename columns</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Lowercase-columns"><span class="nav-text">Lowercase columns</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Drop-names-with-prefix"><span class="nav-text">Drop names with prefix</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DataFrame-math"><span class="nav-text">DataFrame math</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Delete-np-nan"><span class="nav-text">Delete np.nan</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Delete-a-column"><span class="nav-text">Delete a column</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#del"><span class="nav-text">del</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#drop"><span class="nav-text">drop()</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Nested-dict-inputs"><span class="nav-text">Nested dict inputs</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Subset-by-rows"><span class="nav-text">Subset by rows</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#name-amp-value-attributes"><span class="nav-text">name & value attributes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Index-immutable"><span class="nav-text">Index immutable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Index-as-a-set"><span class="nav-text">Index as a set</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#reindex"><span class="nav-text">reindex</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#set-index-amp-reset-index"><span class="nav-text">set_index & reset_index</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Interpolation"><span class="nav-text">Interpolation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Apply-a-function"><span class="nav-text">Apply a function</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#apply-attribute-of-Series"><span class="nav-text">apply: attribute of Series</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#apply-on-multiple-columns"><span class="nav-text">apply on multiple columns</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#apply-multiple-functions"><span class="nav-text">apply : multiple functions</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#apply-with-two-arguments"><span class="nav-text">apply with two arguments</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Case-optimization-with-apply"><span class="nav-text">Case: optimization with apply()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#applymap-attribute-of-DataFrame"><span class="nav-text">applymap : attribute of DataFrame</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Getting-the-common-rows-of-two-columns"><span class="nav-text">Getting the common rows of two columns</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Sorting-1"><span class="nav-text">Sorting</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#sort-index"><span class="nav-text">sort_index</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#sort-values"><span class="nav-text">sort_values</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ranking"><span class="nav-text">ranking</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#reindexing-after-sorting"><span class="nav-text">reindexing after sorting</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Duplicate-indexes"><span class="nav-text">Duplicate indexes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Functions-1"><span class="nav-text">Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#describe-amp-dtypes"><span class="nav-text">describe() & dtypes</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#locate-maximum"><span class="nav-text">locate maximum</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#shift"><span class="nav-text">shift</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Case-study-stock-markets"><span class="nav-text">Case study: stock markets</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Yahoo-finance"><span class="nav-text">Yahoo finance</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Google-finance"><span class="nav-text">Google finance</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Subsetting"><span class="nav-text">Subsetting</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Case-study-histogram"><span class="nav-text">Case study: histogram</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Case-study-histogram-1"><span class="nav-text">Case study: histogram</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Extracting-digits-from-string"><span class="nav-text">Extracting digits from string</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Missing-data"><span class="nav-text">Missing data</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Detecting-NaN"><span class="nav-text">Detecting NaN</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Fill-missing-values"><span class="nav-text">Fill missing values</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Drop-NaN-by-counting"><span class="nav-text">Drop NaN by counting</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Drop-NaN-by-layers"><span class="nav-text">Drop NaN by layers</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Replace-NaN"><span class="nav-text">Replace NaN</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Replacing-NaN-with-counterparts"><span class="nav-text">Replacing NaN with counterparts</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Fill-in-limited-scope"><span class="nav-text">Fill in limited scope</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Fill-with-mean"><span class="nav-text">Fill with mean()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Replace-with-other-values"><span class="nav-text">Replace with other values</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Convert-to-numeric"><span class="nav-text">Convert to numeric</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Hierarchical-indexing"><span class="nav-text">Hierarchical indexing</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#stack-amp-unstack"><span class="nav-text">stack() & unstack()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#MultiIndex"><span class="nav-text">MultiIndex</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#levels-reordering"><span class="nav-text">levels reordering</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Case-study-panel-data"><span class="nav-text">Case study: panel data</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Counting-sort-values"><span class="nav-text">Counting sort_values</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Plot"><span class="nav-text">Plot</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#XKCD-plot"><span class="nav-text">XKCD plot</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Optimization"><span class="nav-text">Optimization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-OOP"><span class="nav-text">Python OOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Applications-of-Python"><span class="nav-text">Applications of Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Machine-learning"><span class="nav-text">Machine learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-mining"><span class="nav-text">Data mining</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL"><span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tableau"><span class="nav-text">Tableau</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#template"><span class="nav-text">template</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Regular-expressions"><span class="nav-text">Regular expressions</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python"><span class="nav-text">Python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Library"><span class="nav-text">Library</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Standard-output"><span class="nav-text">Standard output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Working-directory"><span class="nav-text">Working directory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Change-current-directory"><span class="nav-text">Change current directory</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDE-for-python"><span class="nav-text">IDE for python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spyder"><span class="nav-text">Spyder</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Clear-all-variables-in-Spyder"><span class="nav-text">Clear all variables in Spyder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Autocompletion-amp-search"><span class="nav-text">Autocompletion & search</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jupyter"><span class="nav-text">Jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Execute-code-from-the-clipboard"><span class="nav-text">Execute code from the clipboard</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dos-mode"><span class="nav-text">Dos mode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Timing-the-runtime"><span class="nav-text">Timing the runtime</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-data-structure"><span class="nav-text">Basic data structure</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lists"><span class="nav-text">Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#List-of-floating-point-number"><span class="nav-text">List of floating point number</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Read-list"><span class="nav-text">Read    list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Membership-in-list"><span class="nav-text">Membership in list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Get-the-index-of-a-cell"><span class="nav-text">Get the index of a cell</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Get-the-index-of-matched-item-from-a-list"><span class="nav-text">Get the index of matched item from a list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unpack-list"><span class="nav-text">Unpack list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Concatenation"><span class="nav-text">Concatenation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Combine-list-elements"><span class="nav-text">Combine list elements</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dictionary-of-Lists"><span class="nav-text">Dictionary of Lists</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Index-of-an-list-item"><span class="nav-text">Index of an list item</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unzip-a-list"><span class="nav-text">Unzip a list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Split-into-equal-chunks"><span class="nav-text">Split into equal chunks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Clong-rows-and-columns"><span class="nav-text">Clong rows and columns</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Strings"><span class="nav-text">Strings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tuples"><span class="nav-text">Tuples</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dictionaries"><span class="nav-text">Dictionaries</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basics"><span class="nav-text">Basics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Task-word-counts-in-article"><span class="nav-text">Task: word counts in article</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Task-nested-dictionary"><span class="nav-text">Task: nested dictionary</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Return-multiple-dataframe-using-Dictionary"><span class="nav-text">Return multiple dataframe using Dictionary</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sets"><span class="nav-text">Sets</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basics-1"><span class="nav-text">Basics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Check-membership"><span class="nav-text">Check membership</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Functions"><span class="nav-text">Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#enumerate"><span class="nav-text">enumerate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sorted"><span class="nav-text">sorted</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#zip"><span class="nav-text">zip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unzip"><span class="nav-text">unzip</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flow-control"><span class="nav-text">Flow control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NumPy"><span class="nav-text">NumPy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-ndarray"><span class="nav-text">Create ndarray</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#By-randomization"><span class="nav-text">By randomization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Generate-random-integers-between-0-and-9"><span class="nav-text">Generate random integers between 0 and 9</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#By-functions"><span class="nav-text">By functions</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#array-amp-dtype"><span class="nav-text">array() & dtype</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#nan"><span class="nav-text">nan()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#shape-amp-ndim"><span class="nav-text">shape() & ndim</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#zeros-amp-ones-amp-empty"><span class="nav-text">zeros() & ones() & empty()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#arange-amp-reshape"><span class="nav-text">arange() & reshape()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#view"><span class="nav-text">view()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Type-conversion"><span class="nav-text">Type conversion</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Numpy-matrix-vs-Numpy-array"><span class="nav-text">Numpy matrix vs Numpy array</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dtype"><span class="nav-text">dtype</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#astype"><span class="nav-text">astype()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-to-numeric-string"><span class="nav-text">String to numeric_string</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Factorization"><span class="nav-text">Factorization</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#basic"><span class="nav-text">basic</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#string-vector-creation-amp-frequency"><span class="nav-text">string vector creation & frequency</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Indexing"><span class="nav-text">Indexing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#One-dimension-indexing"><span class="nav-text">One-dimension indexing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Numpy-indexing"><span class="nav-text">Numpy indexing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Numpy-conditional-indexing"><span class="nav-text">Numpy conditional indexing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Indexing-tricks"><span class="nav-text">Indexing tricks</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Re-ordering"><span class="nav-text">Re-ordering</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Select-a-square-region"><span class="nav-text">Select a square region</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Meshgrid-method"><span class="nav-text">Meshgrid method</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#With-equal-number-of-points"><span class="nav-text">With equal number of points</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#With-different-number-of-points-in-x-y-axis"><span class="nav-text">With different number of points in x, y axis</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Task-utility-surface"><span class="nav-text">Task: utility surface</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pairing-lists"><span class="nav-text">Pairing lists</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Boolean-toolkits"><span class="nav-text">Boolean toolkits</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conditional-replacement"><span class="nav-text">Conditional replacement</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Counting-events"><span class="nav-text">Counting events</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sets-1"><span class="nav-text">Sets</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Basic-operations"><span class="nav-text">Basic operations</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Membership"><span class="nav-text">Membership</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Column-grouping-by-types"><span class="nav-text">Column grouping by types</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Numpy-functions"><span class="nav-text">Numpy functions</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Summary-statistics"><span class="nav-text">Summary statistics</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Cumulation"><span class="nav-text">Cumulation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Sorting"><span class="nav-text">Sorting</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Quantiles"><span class="nav-text">Quantiles</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tile-amp-repeat"><span class="nav-text">tile & repeat</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Binary-universal-functions"><span class="nav-text">Binary universal functions</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Transpose-and-swap-axes"><span class="nav-text">Transpose and swap axes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#inverse"><span class="nav-text">inverse</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#transpose-amp-dot"><span class="nav-text">.transpose() & .dot()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#File-input-and-output"><span class="nav-text">File input and output</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#np-save-np-load-np-savez"><span class="nav-text">np.save, np.load, np.savez</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#np-loadtxt"><span class="nav-text">np.loadtxt</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linear-algebra"><span class="nav-text">Linear algebra</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-Binning-data"><span class="nav-text">Case: Binning data</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-counting-occurrence"><span class="nav-text">Case: counting occurrence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-weighted-quantile"><span class="nav-text">Case: weighted quantile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-Random-Walk"><span class="nav-text">Case: Random Walk</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Method-1"><span class="nav-text">Method 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Method-2"><span class="nav-text">Method 2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pandas"><span class="nav-text">Pandas</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Series"><span class="nav-text">Series</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Combine-two-series-into-a-dataframe"><span class="nav-text">Combine two series into a dataframe</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#isnull-amp-notnull"><span class="nav-text">isnull() & notnull()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#indexing"><span class="nav-text">indexing</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#element-wise-operations"><span class="nav-text">element-wise operations</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DataFrame"><span class="nav-text">DataFrame</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Read-index-column-from-csv"><span class="nav-text">Read index column from csv</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Convert-DataFrame-to-Narray-preserving-index"><span class="nav-text">Convert DataFrame to Narray preserving index</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Blank-data-frame"><span class="nav-text">Blank data frame</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Access-sort-values"><span class="nav-text">Access sort_values</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Replacing-values"><span class="nav-text">Replacing values</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Reverse-the-row-order"><span class="nav-text">Reverse the row order</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Get-dummy-variables"><span class="nav-text">Get dummy variables</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Pandas-indexing"><span class="nav-text">Pandas indexing</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#with-Series"><span class="nav-text">with Series</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Rearrange-columns"><span class="nav-text">Rearrange columns</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Keep-slice-columns"><span class="nav-text">Keep/slice columns</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Pandas-conditional-indexing"><span class="nav-text">Pandas conditional indexing</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Rename-columns"><span class="nav-text">Rename columns</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Lowercase-columns"><span class="nav-text">Lowercase columns</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Drop-names-with-prefix"><span class="nav-text">Drop names with prefix</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DataFrame-math"><span class="nav-text">DataFrame math</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Delete-np-nan"><span class="nav-text">Delete np.nan</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Delete-a-column"><span class="nav-text">Delete a column</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#del"><span class="nav-text">del</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#drop"><span class="nav-text">drop()</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Nested-dict-inputs"><span class="nav-text">Nested dict inputs</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Subset-by-rows"><span class="nav-text">Subset by rows</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#name-amp-value-attributes"><span class="nav-text">name & value attributes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Index-immutable"><span class="nav-text">Index immutable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Index-as-a-set"><span class="nav-text">Index as a set</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#reindex"><span class="nav-text">reindex</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#set-index-amp-reset-index"><span class="nav-text">set_index & reset_index</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Interpolation"><span class="nav-text">Interpolation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Apply-a-function"><span class="nav-text">Apply a function</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#apply-attribute-of-Series"><span class="nav-text">apply: attribute of Series</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#apply-on-multiple-columns"><span class="nav-text">apply on multiple columns</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#apply-multiple-functions"><span class="nav-text">apply : multiple functions</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#apply-with-two-arguments"><span class="nav-text">apply with two arguments</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Case-optimization-with-apply"><span class="nav-text">Case: optimization with apply()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#applymap-attribute-of-DataFrame"><span class="nav-text">applymap : attribute of DataFrame</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Getting-the-common-rows-of-two-columns"><span class="nav-text">Getting the common rows of two columns</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Sorting-1"><span class="nav-text">Sorting</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#sort-index"><span class="nav-text">sort_index</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#sort-values"><span class="nav-text">sort_values</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ranking"><span class="nav-text">ranking</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#reindexing-after-sorting"><span class="nav-text">reindexing after sorting</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Duplicate-indexes"><span class="nav-text">Duplicate indexes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Functions-1"><span class="nav-text">Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#describe-amp-dtypes"><span class="nav-text">describe() & dtypes</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#locate-maximum"><span class="nav-text">locate maximum</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#shift"><span class="nav-text">shift</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Case-study-stock-markets"><span class="nav-text">Case study: stock markets</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Yahoo-finance"><span class="nav-text">Yahoo finance</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Google-finance"><span class="nav-text">Google finance</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Subsetting"><span class="nav-text">Subsetting</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Case-study-histogram"><span class="nav-text">Case study: histogram</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Case-study-histogram-1"><span class="nav-text">Case study: histogram</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Extracting-digits-from-string"><span class="nav-text">Extracting digits from string</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Missing-data"><span class="nav-text">Missing data</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Detecting-NaN"><span class="nav-text">Detecting NaN</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Fill-missing-values"><span class="nav-text">Fill missing values</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Drop-NaN-by-counting"><span class="nav-text">Drop NaN by counting</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Drop-NaN-by-layers"><span class="nav-text">Drop NaN by layers</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Replace-NaN"><span class="nav-text">Replace NaN</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Replacing-NaN-with-counterparts"><span class="nav-text">Replacing NaN with counterparts</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Fill-in-limited-scope"><span class="nav-text">Fill in limited scope</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Fill-with-mean"><span class="nav-text">Fill with mean()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Replace-with-other-values"><span class="nav-text">Replace with other values</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Convert-to-numeric"><span class="nav-text">Convert to numeric</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Hierarchical-indexing"><span class="nav-text">Hierarchical indexing</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#stack-amp-unstack"><span class="nav-text">stack() & unstack()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#MultiIndex"><span class="nav-text">MultiIndex</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#levels-reordering"><span class="nav-text">levels reordering</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Case-study-panel-data"><span class="nav-text">Case study: panel data</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Counting-sort-values"><span class="nav-text">Counting sort_values</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Plot"><span class="nav-text">Plot</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Clustered-stacked-bar-character"><span class="nav-text">Clustered, stacked bar character</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Broken-axis-plots"><span class="nav-text">Broken axis plots</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#plt-subplots-vs-fig-subplots-adjust"><span class="nav-text">plt.subplots vs fig.subplots_adjust</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XKCD-plot"><span class="nav-text">XKCD plot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Plot-“The-Economist”-type-graphs"><span class="nav-text">Plot “The Economist”-type graphs</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Optimization"><span class="nav-text">Optimization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-OOP"><span class="nav-text">Python OOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Applications-of-Python"><span class="nav-text">Applications of Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Machine-learning"><span class="nav-text">Machine learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-mining"><span class="nav-text">Data mining</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL"><span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tableau"><span class="nav-text">Tableau</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#template"><span class="nav-text">template</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Regular-expressions"><span class="nav-text">Regular expressions</span></a></li></ol></li></ol></li></ol>
+    
     </div>
   </aside>
-
-
+</section>
         
       </div>
-    </main>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
+    </div>
+    <!-- <nav id="mobile-nav">
   
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">n0body</span>
+    <a href="/note/" class="mobile-nav-link">Home</a>
+  
+    <a href="/note/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/note/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/note/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/note/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
 
-  
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2018 Data Science All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
 </div>
 
+<!-- mathjax config similar to math.stackexchange -->
 
-  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
 
-  <span class="post-meta-divider">|</span>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.2</div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
 
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
 
+  <link rel="stylesheet" href="/note/fancybox/jquery.fancybox.css">
+  <script src="/note/fancybox/jquery.fancybox.pack.js"></script>
 
 
+<script src="/note/js/script.js"></script>
+<script src="/note/js/bootstrap.js"></script>
+<script src="/note/js/main.js"></script>
 
 
 
 
 
-  
 
 
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
 
 
 
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
 
 
 
 
 
 
+  </div>
 
-  
-  <script type="text/javascript" src="/note/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/note/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/note/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/note/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/note/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/note/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/note/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/note/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/note/js/src/affix.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/note/js/src/schemes/pisces.js?v=5.1.2"></script>
-
-
-
-  <script type="text/javascript" src="/note/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/note/js/src/post-details.js?v=5.1.2"></script>
-
-
-  
-  <script type="text/javascript" src="/note/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/note/js/src/post-details.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/note/js/src/bootstrap.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>
@@ -1206,12 +818,5 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
-  
-
-
-  
-
-  
-
 </body>
 </html>
