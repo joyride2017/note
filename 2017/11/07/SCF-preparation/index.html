@@ -1,332 +1,141 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="en">
+<html>
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  
-  <link href="/note/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
+  <title>SCF preparation | Data Science</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/note/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/note/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/note/favicon.ico?v=5.1.2" />
-
-
-
-
-
-
-<meta name="description" content="Survey data during the periods 1983 to 2013">
+  <meta name="description" content="Survey data during the periods 1983 to 2013">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SCF preparation">
 <meta property="og:url" content="https://joyride2017.github.io/note/2017/11/07/SCF-preparation/index.html">
-<meta property="og:site_name" content="Local Playground">
+<meta property="og:site_name" content="Data Science">
 <meta property="og:description" content="Survey data during the periods 1983 to 2013">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-24T21:30:49.106Z">
+<meta property="og:updated_time" content="2018-03-15T15:47:51.543Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SCF preparation">
 <meta name="twitter:description" content="Survey data during the periods 1983 to 2013">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/note/',
-    scheme: 'Gemini',
-    version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="https://joyride2017.github.io/note/2017/11/07/SCF-preparation/"/>
-
-
-
-
-
-  <title>SCF preparation | Local Playground</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
+  <link rel="icon" href="/note/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
 
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/note/css/style.css">
 
+  <script src="/note/js/jquery-3.1.1.min.js"></script>
 
-
-
-
-
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/note/css/bootstrap.css" >
+  <link rel="stylesheet" href="/note/css/fashion.css" >
+  <link rel="stylesheet" href="/note/css/glyphs.css" ><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
 
   
-  
-    
-  
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
 
-    <div class="custom-logo-site-title">
-      <a href="/note/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Local Playground</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
+          <h1 class="site-title">
+            
+              <a href="/note/" title="Data Science" rel="home"> Data Science </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/note/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/note/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/note/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/note/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/note/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
   </div>
+</header>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
         
-        <li class="menu-item menu-item-home">
-          <a href="/note/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/note/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
+          <section id="main" style="float:none;"><article id="post-SCF-preparation" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://joyride2017.github.io/note/note/2017/11/07/SCF-preparation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="n0body">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/note/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Local Playground">
-    </span>
-
     
-      <header class="post-header">
-
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">SCF preparation</h1>
-        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      SCF preparation
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-07T16:55:17-06:00">
-                2017-11-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-              <div class="post-description">
-                  Survey data during the periods 1983 to 2013
-              </div>
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-meta">
       
-      
+	<a href="/note/2017/11/07/SCF-preparation/" class="article-date">
+	  <time datetime="2017-11-07T22:55:17.000Z" itemprop="datePublished">November 7, 2017</time>
+	</a>
 
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  VIEWS<span id="busuanzi_value_page_pv"></span> TIMES
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
       
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="1983"><a href="#1983" class="headerlink" title="1983"></a>1983</h1><p>Yang uses the edited and imputed version for 1983.</p>
 <blockquote>
 <p>Weights for the 1983 survey were constructed in two phases. Relative weights for the <strong>area-probability sample</strong> were constructed to compensate for differential <strong>non-response rates</strong> across the survey’s 75 primary sampling units. Those weights were further <strong>post-stratified</strong> by region and degree of urbanization to <strong>reflect population estimates</strong> from the March 1983 Current Population Survey (CPS).</p>
-<p>1983:   February - August ‘83<br>1986:   June - September ‘86<br>1989:   October ‘89 - March ‘90</p>
-</blockquote>
+<p>1983:   February - August ‘83<br>1986:   June - September ‘86<br>1989:   October ‘89 - March ‘90<br><a id="more"></a></p>
 <ul>
-<li><p>Full public data set: edited and imputed version<br>Final survey data COPY/EXPORT version (3.9 MB) <a href="https://www.federalreserve.gov/econres/files/1983_scf83bx.zip" target="_blank" rel="external">1983_scf83bx.zip</a>. Variables are prefixed with “B” and contain variables “V1 (in uncleaned version)” and “B1 (for edited version)” as unique observation identifier. Stata version <a href="https://www.federalreserve.gov/econres/files/1983_scf83bs.zip" target="_blank" rel="external">1983_scf83bs.zip</a></p>
-<blockquote>
+<li>Full public data set: edited and imputed version<br>Final survey data COPY/EXPORT version (3.9 MB) <a href="https://www.federalreserve.gov/econres/files/1983_scf83bx.zip" target="_blank" rel="external">1983_scf83bx.zip</a>. Variables are prefixed with “B” and contain variables “V1 (in uncleaned version)” and “B1 (for edited version)” as unique observation identifier. Stata version <a href="https://www.federalreserve.gov/econres/files/1983_scf83bs.zip" target="_blank" rel="external">1983_scf83bs.zip</a></li>
+</ul>
 <p>Full sample seems to refer to the integration of <strong>area probability sample</strong> and <strong>high-income sample</strong>.</p>
 <p><code>High-Income and full sample weights</code>: The weights for the combined sample containing both the area probability and high-income samples were more difficult to compute, and are more subject to question. Unfortunately full information on the high-income sampling procedure is not publicly available. Additional complications stem from the fact that the high-income observations were drawn from a 1980 sampling frame of taxpayers (but were contacted in 1983) and the fact that the reporting basis for tax files (individuals or married couples) is not always the same as the survey (families).</p>
 <p>The <strong>fitted probit equation</strong> results can be used in two ways. The <strong>inverse of the predicted probability that an observation would have been included in the cleaned sample (conditioned on the predictor variables used), can be used to weight observations in analysis</strong>. In practice, this procedure implies higher weights for observations holding a large number of different assets.</p>
@@ -334,8 +143,8 @@
 <p>All variables listed here have a “B” prefix followed by a four digit number ranging from 3001 to5749.  The original uncleaned survey responses are contained invariables with a “V” prefix.  These variables range from V1 to V2613.The codes for the “V” variables are described in the original survey codebook released by the SRC.  We note, though, that the “B” variables contain all the same types of information as those contained in the”V” variables.  Thus, for most analyses, it is possible to use the “B”variables without reference to the “V” variables.</p>
 <p><strong>B3305</strong>     GROSS ASSETS EXCLUDING NON-THRIFT PENSIONS.<br>The sum of paper assets plus current value of home plus gross value of other properties plus total value of vehicles plus net value of <strong>businesses</strong> with and without management interest (B3304 + B3501 + B3502).  No missing values. xxxxxxxx. dollars (5 to 86,857,433) 0. none (147 cases)<br><strong>B3324</strong>    NET WORTH.<br>Gross assets excluding pensions plus total net present value of pensions minus <strong>total debt</strong> (B3305 + B3316 - B3320).  No missing values (currently the same as B3323). xxxxxxxx. dollars (-73,400 to 86,852,003) 0. none (105 cases)</p>
 </blockquote>
-<p>Codebook <a href="https://www.federalreserve.gov/econres/files/1983_codebk83.txt" target="_blank" rel="external">1983_codebk83</a><br>Appendix (inclusing occupation and industry codes) <a href="https://www.federalreserve.gov/econres/files/1983_appendix83.pdf" target="_blank" rel="external">1983_appendix83.pdf</a><br>Codebook contains the text, variable names, and responses for the questions asked in the survey.</p>
-<p>​</p>
+<p>  Codebook <a href="https://www.federalreserve.gov/econres/files/1983_codebk83.txt" target="_blank" rel="external">1983_codebk83</a><br>  Appendix (inclusing occupation and industry codes) <a href="https://www.federalreserve.gov/econres/files/1983_appendix83.pdf" target="_blank" rel="external">1983_appendix83.pdf</a><br>  Codebook contains the text, variable names, and responses for the questions asked in the survey.</p>
+<p>  ​</p>
 <blockquote>
 <p><strong>Why uses weights?</strong> For a variety of reasons, final household survey data will rarely represent a random draw from the U.S. population.  Even if the original survey design were random, different types of households will have different likelihoods of completing interviews. Very high and very low income households, for example, are thought to be less likely to participate in surveys.  The 1983 SCF had an additional source of non-randomness because of the inclusion of the high-income supplement. These factors necessitated the construction of weighting variables to compensate for known or estimable sources of stratification in the final data set.</p>
 <p>Inclusion of households in the <strong>final “cleaned” data set</strong> described in this manual results from a series of implicit stratified selection criteria. There are four major sources of implicit <code>stratification</code>. (1) there are different <code>response rates</code> for different household types. (2) The sample may not fully reflect U.S. population due to <code>sampling error</code> in the survey itself (in the sense that any random sample will not have the same average characteristics as the population from which it is drawn). (3) Not all survey observations were <code>usable</code> for analysis because of significant missing information due to deliberate or inadvertent actions.  In specific, of the 3,824 area probability sample survey households included in the original SRC data tape, 159 observations were dropped in the cleaned file. Finally, the SCF sample is drawn from both the area probability and high-income sampling frames. If both samples are used, it is necessary to properly mix them to have a representative national sample.</p>
@@ -366,9 +175,7 @@
 <li>INAP (3432/3955 cases)</li>
 </ol>
 </blockquote>
-<h1 id="1986"><a href="#1986" class="headerlink" title="1986"></a>1986</h1></li>
-</ul>
-<p>The 1983 SCF was conducted through in-person household interviews between <code>February</code> and <code>August</code> 1983.</p>
+<h1 id="1986"><a href="#1986" class="headerlink" title="1986"></a>1986</h1><p>The 1983 SCF was conducted through in-person household interviews between <code>February</code> and <code>August</code> 1983.</p>
 <blockquote>
 <p>The 1986 SCF – sponsored by the Federal Reserve Board, the Department of Health and Human Services, the Office of the Comptroller of the Currency, and the General Accounting Office – was a more limited 27-minute <strong>re-interview survey</strong> with respondents to the <strong>1983 SCF</strong>.  When 1983 couples divorced or separated, the survey followed both parties. However, other members who left the household, such as young adults were not followed. A total of 2,822 interviews were completed, by telephone, between <code>June</code> and <code>September</code> 1986. As in 1983, the unit of observation was the family.</p>
 <p>For many purposes, it is useful to view the 1986 sample as a sub-sample of the 1983 survey. However, it is also possible to view the 1986 sample as a <strong>new cross-section</strong>, representative of the structure of the 1986 household population. Accordingly, we have constructed two sampling weights for the 1986 sample.  The first weight – which we term the “1983/86 weight” – was designed to allow the sample of households reached in 1986 to represent the entire 1983 sample. The second 1986 sample weight – deemed the “<strong>1986 weight</strong>“ – may be used to represent the 1986 household population.</p>
@@ -402,6 +209,7 @@
 <p>For an overview of the theory of multiple imputation and the analysis of multiply-imputed data, see <code>MULTIPLE IMPUTATION FOR NONRESONSE IN SURVEYS</code> by Donald B. Rubin, John Wiley and Sons, 1987.</p>
 <p>​</p>
 <p>The dataset contains several sets of <code>nonresponse-adjusted sampling weights</code>. <strong>X42001</strong> is the weight strongly recommended for the analysis of the data for most purposes. This variable is a partially design-based weight constructed at the Federal Reserve using original selection probabilities and frame information along with aggregate control totals estimated from the <strong>Current Population Survey</strong>.</p>
+<p>​</p>
 <p>Work status categories for head (OCCAT1):</p>
 <pre><code>1=work for someone else, 2=self-employed/partnership,
 3=retired/disabled + (student/homemaker/misc. not working and
@@ -467,366 +275,159 @@ laborers, farmers, foresters, fishers) 4=not working.
 
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
+    <footer class="entry-meta entry-footer">
       
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/note/2017/10/24/China-s-prospect/" rel="next" title="China's prospect">
-                <i class="fa fa-chevron-left"></i> China's prospect
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
       
       
     </footer>
+    <hr class="entry-footer-hr">
   </div>
   
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
     
-  </div>
-
-
-        </div>
-        
-          
+<nav id="article-nav">
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
+  
+    <a href="/note/2017/10/24/China-s-prospect/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">China&#39;s prospect</div>
+    </a>
+  
+</nav>
 
-  <aside id="sidebar" class="sidebar">
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
     
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          
-            <p class="site-author-name" itemprop="name">n0body</p>
-            <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/note/archives/">
-            
-                <span class="site-state-item-count">8</span>
-                <span class="site-state-item-name">posts</span>
-              </a>
-            </div>
-          
-
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/note/tags/index.html">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">tags</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1983"><span class="nav-text">1983</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1986"><span class="nav-text">1986</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1989"><span class="nav-text">1989</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1992"><span class="nav-text">1992</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1995"><span class="nav-text">1995</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1998"><span class="nav-text">1998</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2001"><span class="nav-text">2001</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2004"><span class="nav-text">2004</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2007"><span class="nav-text">2007</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2010"><span class="nav-text">2010</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2013"><span class="nav-text">2013</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CPI"><span class="nav-text">CPI</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1983"><span class="nav-text">1983</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1986"><span class="nav-text">1986</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1989"><span class="nav-text">1989</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1992"><span class="nav-text">1992</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1995"><span class="nav-text">1995</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1998"><span class="nav-text">1998</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2001"><span class="nav-text">2001</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2004"><span class="nav-text">2004</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2007"><span class="nav-text">2007</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2010"><span class="nav-text">2010</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2013"><span class="nav-text">2013</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CPI"><span class="nav-text">CPI</span></a></li></ol>
+    
     </div>
   </aside>
-
-
+</section>
         
       </div>
-    </main>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
+    </div>
+    <!-- <nav id="mobile-nav">
   
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">n0body</span>
+    <a href="/note/" class="mobile-nav-link">Home</a>
+  
+    <a href="/note/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/note/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/note/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/note/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
 
-  
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2018 Data Science All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
 </div>
 
+<!-- mathjax config similar to math.stackexchange -->
 
-  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
 
-  <span class="post-meta-divider">|</span>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.2</div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
 
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
 
+  <link rel="stylesheet" href="/note/fancybox/jquery.fancybox.css">
+  <script src="/note/fancybox/jquery.fancybox.pack.js"></script>
 
 
+<script src="/note/js/script.js"></script>
+<script src="/note/js/bootstrap.js"></script>
+<script src="/note/js/main.js"></script>
 
 
 
 
 
-  
 
 
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
 
 
 
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
 
 
 
 
 
 
+  </div>
 
-  
-  <script type="text/javascript" src="/note/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/note/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/note/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/note/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/note/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/note/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/note/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/note/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/note/js/src/affix.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/note/js/src/schemes/pisces.js?v=5.1.2"></script>
-
-
-
-  <script type="text/javascript" src="/note/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/note/js/src/post-details.js?v=5.1.2"></script>
-
-
-  
-  <script type="text/javascript" src="/note/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/note/js/src/post-details.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/note/js/src/bootstrap.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>
@@ -844,12 +445,5 @@ laborers, farmers, foresters, fishers) 4=not working.
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
-  
-
-
-  
-
-  
-
 </body>
 </html>
